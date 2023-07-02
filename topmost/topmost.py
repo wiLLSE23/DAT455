@@ -3,11 +3,34 @@ sys.path.append('/Users/wille/Code/Sommarprogg/Labb1/wordfreq')
 import wordfreq
 import urllib.request
 import ssl
-
+import matplotlib.pyplot as plt
 """topmost
 This script allows the user to count the frequency of words, numbers, or symbols in a file given as argument in terminal
 It is assumed that the input is a .txt file
 """
+def zipfPlot(counts,n):
+    """takes a dictionary of strings and their frequencies and plots this against zips law (freq(w) ~ 1 / rank(w))
+    retrieved from Lecture 05 slide 30
+    Parameters
+    ----------
+    counts : dict
+        the dictionary of words and frequencies <str>:<int>
+    n : int
+        the number of words to be analyzed. cannot exceed length of dictionary
+    """
+    freqs = sorted(list(counts.items()),
+                   key = lambda x: -(x[1]))
+    X = []
+    Y = []
+    i = 1  # rank of the most frequent item
+    for x,y in freqs[:n]:
+        X.append(i)
+        Y.append(y)
+        i = i+1
+    Y1 = [Y[0]/x for x in X]
+    plt.plot(X,Y,'ro')
+    plt.plot(X,Y1)
+    plt.show()
 
 def open_file(path):
     """takes a file of strings, returns a list of those sentences
@@ -84,7 +107,8 @@ def main():
 
     wordList = wordfreq.tokenize(text)
     word_freq = wordfreq.countWords(wordList, stop_words)
-    wordfreq.printTopMost(word_freq, sys.argv[3])
+    zipfPlot(word_freq, int(sys.argv[3])) #plots the frequencies along with the zipf estimation
+    wordfreq.printTopMost(word_freq, int(sys.argv[3]))
 
 if __name__ == "__main__":
     main()

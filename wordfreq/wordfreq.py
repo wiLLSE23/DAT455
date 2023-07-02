@@ -112,7 +112,7 @@ def printTopMost(frequencies,n):
     for word,freq in frequencies.items():
         l.append((word, freq))
     for (x,y) in sorted(l, key=lambda x: -x[1]):
-        if(i>=int(n)):
+        if(i>=n):
             break
         print(x.ljust(20) + str(y).rjust(5))
         i+=1
