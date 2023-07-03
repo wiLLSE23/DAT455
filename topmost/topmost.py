@@ -1,14 +1,25 @@
 import sys
-sys.path.append('/Users/wille/Code/Sommarprogg/Labb1/wordfreq')
-import wordfreq
 import urllib.request
 import ssl
 import matplotlib.pyplot as plt
+sys.path.append('/Users/wille/Code/Sommarprogg/Labb1/wordfreq')
+import wordfreq
+
 """topmost
 This script allows the user to count the frequency of words, numbers, or symbols in a file given as argument in terminal
 It is assumed that the input is a .txt file
+
+This file can also be imported as a module and contains the following
+functions:
+    * zipf_plot - plots the frequency of top n words against zips law
+    * open_file - opes a .txt file and returns the rows in a list
+    * open_stripped_file - opes a .txt file and returns the strings in a list with stripped elements
+    * open_url - opens a url and returns the rows in a list
+    * main - runs the code with system arguement 1, 2, 3 [stopwords file, text file, number of words to be printed]
 """
-def zipfPlot(counts,n):
+
+
+def zipf_plot(counts, number_of_words):
     """takes a dictionary of strings and their frequencies and plots this against zips law (freq(w) ~ 1 / rank(w))
     retrieved from Lecture 05 slide 30
     Parameters
@@ -19,18 +30,19 @@ def zipfPlot(counts,n):
         the number of words to be analyzed. cannot exceed length of dictionary
     """
     freqs = sorted(list(counts.items()),
-                   key = lambda x: -(x[1]))
-    X = []
-    Y = []
+                   key=lambda element: -(element[1]))
+    word_list = []
+    freq_list = []
     i = 1  # rank of the most frequent item
-    for x,y in freqs[:n]:
-        X.append(i)
-        Y.append(y)
+    for word, freq in freqs[:number_of_words]:
+        word_list.append(i)
+        freq_list.append(freq)
         i = i+1
-    Y1 = [Y[0]/x for x in X]
-    plt.plot(X,Y,'ro')
-    plt.plot(X,Y1)
+    freq_one = [freq_list[0]/word for word in word_list]
+    plt.plot(word_list, freq_list, 'ro')
+    plt.plot(word_list, freq_one)
     plt.show()
+
 
 def open_file(path):
     """takes a file of strings, returns a list of those sentences
@@ -45,10 +57,11 @@ def open_file(path):
     list
         a list of the lines in the file
     """
-    txt_file = open(path)
+    txt_file = open(path, 'r', encoding='utf-8')
     lines = txt_file.readlines()
     txt_file.close()
     return lines
+
 
 def open_stripped_file(path):
     """takes a file of strings, returns a list of those string stripped of blank characters
@@ -63,10 +76,11 @@ def open_stripped_file(path):
     list
         a list of the lines in the file
     """
-    file = open(path)
+    file = open(path, 'r', encoding='utf-8')
     lines = [line.strip() for line in file.readlines()]
     file.close()
     return lines
+
 
 def open_url(url):
     """takes a url of a text file with sentences, returns a list of those sentences
@@ -85,8 +99,11 @@ def open_url(url):
     response = urllib.request.urlopen(url)
     return response.read().decode("utf8").splitlines()
 
+
 def main():
-    """takes a file of sentences, one of words and a number and prints the fruequency of the x most common words in text except those specified in the words file
+    """takes a file of sentences, one of words and a number
+    and prints the fruequency of the x most common words in text
+    except those specified in the words file
 
     Parameters
     ----------
@@ -96,19 +113,19 @@ def main():
         the path of text file
     sys[3] : int
         the number of words to be printed
-    """  
-     
+    """
     stop_words = open_stripped_file(sys.argv[1])
-    
-    if(sys.argv[2].startswith('http://') or sys.argv[2].startswith('https://')):
+
+    if (sys.argv[2].startswith('http://') or sys.argv[2].startswith('https://')):
         text = open_url(sys.argv[2])
     else:
         text = open_file(sys.argv[2])
 
-    wordList = wordfreq.tokenize(text)
-    word_freq = wordfreq.countWords(wordList, stop_words)
-    zipfPlot(word_freq, int(sys.argv[3])) #plots the frequencies along with the zipf estimation
-    wordfreq.printTopMost(word_freq, int(sys.argv[3]))
+    word_list = wordfreq.tokenize(text)
+    word_freq = wordfreq.count_words(word_list, stop_words)
+    # plots the frequencies along with the zipf estimation
+    zipf_plot(word_freq, int(sys.argv[3]))
+    wordfreq.print_top_most(word_freq, int(sys.argv[3]))
 
 if __name__ == "__main__":
     main()
