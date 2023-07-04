@@ -76,7 +76,10 @@ def open_stripped_file(path):
     list
         a list of the lines in the file
     """
-    file = open(path, 'r', encoding='utf-8')
+    try:
+        file = open(path, 'r', encoding='utf-8')
+    except:
+        raise Exception("invalid path: ", path)
     lines = [line.strip() for line in file.readlines()]
     file.close()
     return lines
@@ -96,7 +99,10 @@ def open_url(url):
         a list of the lines in the file
     """
     ssl._create_default_https_context = ssl._create_unverified_context
-    response = urllib.request.urlopen(url)
+    try:
+        response = urllib.request.urlopen(url)
+    except:
+        print("error opening link: ", url)
     return response.read().decode("utf8").splitlines()
 
 
@@ -107,25 +113,27 @@ def main():
 
     Parameters
     ----------
-    sys[1] : str
+    arg[1] : str
         the path of stopwords file
-    sys[2] : str
+    arg[2] : str
         the path of text file
-    sys[3] : int
+    agr[3] : int
         the number of words to be printed
     """
-    stop_words = open_stripped_file(sys.argv[1])
+    if(sys.argv[1].endswith(".txt") and sys.argv[2].endswith(".txt") and sys.argv[3].isdigit()):
+        stop_words = open_stripped_file(sys.argv[1])
 
-    if (sys.argv[2].startswith('http://') or sys.argv[2].startswith('https://')):
-        text = open_url(sys.argv[2])
+        if (sys.argv[2].startswith('http://') or sys.argv[2].startswith('https://')):
+            text = open_url(sys.argv[2])
+        else:
+            text = open_file(sys.argv[2])
+
+        word_list = wordfreq.tokenize(text)
+        word_freq = wordfreq.count_words(word_list, stop_words)
+        # plots the frequencies along with the zipf estimation
+        zipf_plot(word_freq, int(sys.argv[3]))
+        wordfreq.print_top_most(word_freq, int(sys.argv[3]))
     else:
-        text = open_file(sys.argv[2])
-
-    word_list = wordfreq.tokenize(text)
-    word_freq = wordfreq.count_words(word_list, stop_words)
-    # plots the frequencies along with the zipf estimation
-    zipf_plot(word_freq, int(sys.argv[3]))
-    wordfreq.print_top_most(word_freq, int(sys.argv[3]))
-
+        raise TypeError("arguments are invalid")
 if __name__ == "__main__":
     main()

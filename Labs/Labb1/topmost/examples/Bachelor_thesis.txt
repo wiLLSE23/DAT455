@@ -1,0 +1,1637 @@
+﻿Chalmers logotyp 
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Aggregator Role in V2G 
+
+
+Bachelor Thesis within Industrial Engineering and Management
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEPARTMENT OF TECHNOLOGY MANAGEMENT AND ECONOMICS
+DIVISION OF ENTREPRENEURSHIP AND STRATEGY  
+
+
+CHALMERS TEKNISKA HÖGSKOLA 
+Göteborg, Sverige 2023
+www.chalmers.se
+________________
+Acknowledgements
+This bachelor thesis has been written at the Department of Technology Management and Economics during the spring semester of 2023. The thesis was written by six students in the Industrial Engineering and Management program at Chalmers University of Technology. The work has been supervised by Kamilla Kohn Rådberg, a researcher at the Division of Entrepreneurship and Strategy.
+
+
+We would like to take this opportunity to thank our supervisor Kamilla for all the guidance and constructive feedback we’ve received during the course of this work. Without her help, we wouldn’t have gotten the report to where it is today.
+
+
+Additionally, we would like to extend a huge thank you to the companies and individuals that have participated in interviews. Your answers and experiences contributed greatly to giving us a deeper insight into the Swedish electricity market and vehicle-to-grid value chain. 
+
+
+________________
+Abstract
+The electrification of society and increasing use of unpredictable renewable energy sources present significant challenges to the electrical grids. To assist in the transition towards a more renewable society, innovative technologies such as vehicle-to-grid can help flatten the energy demand curve and support the grid. Vehicle-to-grid can leverage the battery in electric vehicles to store electricity that can be used to power the grid when necessary. Although the technology exists, the economic landscape is relatively unexplored and needs to be understood in order to diffuse the technology. This thesis aims to identify the central aspects and structures required for the aggregator role in a Swedish vehicle-to-grid network and explore how an electric vehicle manufacturer could pursue this role. The area has been analyzed through interviews and a survey. The interviews explored different actors' perception of the subject using a semi-structured interview method, whilst the survey complemented this by focusing on the views of electric vehicle users. The findings suggest that current actors have different competencies but only in their respective operations. To adopt an aggregator role, one must have a broader knowledge both of the electricity system, aggregation, and customers. Collaboration and communication between electric vehicle users, aggregators, and grid operators will be essential for the network to operate efficiently. Preferences for compensation, ease of use, state of charge control, and transparency should be taken into consideration by aggregators in developing a compelling value proposition to acquire customers. Once analyzed, the results are placed in the context of real-world operations to provide a foundation for OEMs that wish to adopt an aggregator role in a V2G setting.
+
+
+Keywords: V2G; vehicle-to-grid; electricity market; aggregator; aggregation; car manufacturer;  
+
+
+________________
+Sammanfattning
+
+
+Elektrifieringen av samhället och den ökande användningen av oförutsägbara förnybara energikällor utgör betydande utmaningar för elnäten. För att hjälpa till i övergången till ett mer förnybart samhälle kan innovativa tekniker som vehicle-to-grid hjälpa till att jämna ut efterfrågan av energi och stödja elnätet. Vehicle-to-grid utnyttjar batteriet i elfordon för att lagra el som kan användas för att stötta nätet vid behov. Trots att tekniken existerar är det ekonomiska landskapet relativt outforskat och måste förstås för att sprida tekniken. Detta kandidatarbete syftar till att identifiera de centrala aspekter och strukturer som krävs för rollen som aggregator i ett svenskt vehicle-to-grid nätverk och utforska hur en elbilstillverkare skulle kunna ta denna roll. Området har analyserats genom intervjuer och en enkät. Intervjuerna utforskade olika aktörers uppfattning om ämnet med hjälp av en semistrukturerad metod, medan enkäten kompletterade detta genom att fokusera på elbilstillverkare åsikter. Resultaten antyder att befintliga aktörer har olika kompetenser, men endast inom sina respektive verksamhetsområden. För att anta en aggregatorroll måste man ha en bredare kunskap om både elsystemet, aggregation och kunder. Samarbete och kommunikation mellan elbilsanvändare, aggregatorer och nätoperatörer kommer att vara avgörande för att nätverket ska fungera effektivt. Önskemål om ersättning, användarvänlighet, kostnadskontroll och transparens bör beaktas av aggregatorer när de utvecklar en affärsmodell för att attrahera kunder. Efter analysen appliceras resultaten i en verklig kontext för att tillhandahålla underlag för OEM-företag som vill anta en aggregatorroll i en V2G-miljö.
+
+
+Nyckelord: V2G; vehicle-to-grid; elmarknaden; aggregator; aggregation; biltillverkare;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________
+
+
+Contents
+Acknowledgements        1
+Abstract        2
+Sammanfattning        3
+Acronyms & Definitions        6
+1 Introduction        7
+1.1 Problem Analysis & Scope        8
+1.3 Background to EVs in Sweden        8
+1.4 Introduction to The Swedish Electricity System        9
+2 Theory        12
+2.1 Frequency Balancing        12
+2.2 Flexibility Market        13
+2.3 Vehicle-to-Grid        14
+2.3.1 V2G Technology        14
+2.3.2 V2G Applications        14
+2.3.3 V2G Value Network        15
+2.3.4 Prosumers        16
+2.4 The Aggregator Role        17
+2.4.1 Aggregation Models        18
+2.4.2 Independent Aggregation        18
+2.4.3 V2G Aggregation        18
+3 Method        20
+3.1 Data Collection        20
+3.1.1 Interviews        20
+3.1.2 Survey        22
+3.3 Data Analysis        22
+4 Results and Analysis        24
+4.1 Interviews        24
+4.1.1 The Aggregator Role        24
+4.1.2 Barriers for V2G Aggregators        25
+4.1.3 Central Aspects for V2G Aggregators        26
+4.1.4 Differences Between Possible Aggregator Markets        28
+4.1.5 Actors Suitable for an Aggregator Service        29
+4.1.6 Suitability of an EV Manufacturer as an Aggregator        30
+4.1.7 Aggregators and EV Users        31
+4.2 Survey        31
+5 Discussion        37
+5.1 The Aggregator Role        37
+5.2 V2G Aggregator Market Aspects        38
+5.3 V2G Network        39
+5.4 EV Users        40
+6 Managerial implications        42
+6.1 OEM as Technical Aggregator        42
+6.2 OEM as Independent Aggregator        43
+7 Conclusion        45
+References        47
+Appendix 1. Sustainable Development and Ethics        54
+Appendix 2. Survey        56
+Appendix 3. Survey Results Question Six        64
+
+
+
+________________
+Acronyms & Definitions
+BEV - Battery electric vehicle
+BRP - Balance responsible party
+BSP - Balance service provider
+DSO - Distribution system operators 
+EV - Electric vehicle
+OEM - Original equipment manufacturer
+Prosumer - An individual that both consumes and produces 
+PHEV - Plug-in hybrid vehicle
+SoC - State of Charge
+Svk - Svenska kraftnät
+TSO - Transmission system operator
+V2G - Vehicle-to-grid
+________________
+
+
+1 Introduction
+The electrification of society has presented a significant challenge to the electrical grid and may lead to power fluctuations and even blackouts. As renewable energy sources increasingly replace fossil fuels, the grid is further strained due to the unpredictability of weather-dependent renewable energy resources, which limits the ability to manually adjust energy supply to meet demand (Kungliga Ingenjörsvetenskapsakademien [IVA], 2019). To enable a complete transition from fossil fuels towards a more renewable society, solutions for supporting the grid and flattening the demand-supply energy curve must be implemented. Investments in new transformers, larger cables, and research are required to handle peaks in the grid (Energimarknadsinspektionen, 2023). To spread out and delay these investments, new technologies to support the grid such as vehicle-to-grid (V2G) must be diffused to ensure a more economically sustainable transformation.
+
+
+Kempton and Letendre (1997) introduced the concept of V2G as a technology that uses the battery in  electric vehicles (EV) to store electricity that can be used to power the grid. For this technology to be viable in practice, bidirectional charging, control of charging and discharging, and service auditing capabilities are necessary (Noel et al., 2019). Also, a business model that satisfies stakeholders is essential for the technology to become economically feasible and adopted by vehicle owners and users. Although the technology exists, and many vehicle manufacturers are improving it, identifying value flows and incentives for stakeholders is crucial for its diffusion.
+
+
+In recent years, there has been a notable surge in the adoption of EVs in Sweden, resulting in a more than twofold increase in their numbers (Elbilsstatistik, 2023). This growing popularity could be attributed to the compelling advantages of EVs, including their low environmental impact and high efficiency. In addition, the emerging concept of V2G technology presents further opportunities by enabling EVs to not only draw energy from the grid but also return it during periods of inactivity. This has the potential to increase the flexibility and stability of the grid, reduce the reliance on fossil fuels, and provide a source of revenue for EV users. Given the growing EV population, it is critical to effectively harness their potential in a resource-efficient manner. Today, V2G is being tested in pilot projects. One such project is PEPP, Public EV Power Pilots, in which multiple actors, including Chalmers University of Technology, are testing the use of EVs in order to support the electrical grid (Chalmers University of Technology, 2023).
+
+
+V2G is a suitable tool for providing the grid with resilience and frequency stability during changes in electricity demand or supply. However, the V2G network quickly becomes complex, and a large number of vehicles must be charged and discharged collectively. There are financial, physical, and contractual flows throughout the stakeholder network, making it a complicated network. Several key actors, including the aggregator role, have been identified within these flows (Energimarknadsinspektionen, 2017). The aggregator role involves aggregating several energy resources to be used as one, but in a V2G situation, the aggregator may need to perform additional tasks, such as predicting charging patterns and communicating with the EV user. 
+
+
+Due to the untapped potential of the electricity markets, several established actors are becoming interested in leveraging the aggregator role. One such actor is EV manufacturers, who already have a deep technical understanding of EVs and a relationship with their users. In light of this, the aim of this thesis is to identify the central aspects and structures required for the aggregator role to function in a Swedish V2G network and explore how an EV manufacturer could pursue this role.
+1.1 Problem Analysis & Scope
+One of the challenges in implementing V2G is the need for an aggregator to manage the flow of electricity between EVs and the grid. The aggregator acts as an intermediary between EVs and grid operators, coordinating the charging and discharging of the vehicles to ensure that they are available when needed and that they meet the requirements of the grid (Sovacool et al., 2020). This role can be embodied by a third-party aggregator or other actors, and the original equipment manufacturer (OEM), in this case the vehicle manufacturers, have the potential to leverage their position to become aggregators themselves. Against this backdrop, the research question for this thesis is: "How could a vehicle manufacturer adopt the aggregator role in a V2G solution?" 
+
+
+There are several factors to consider when entering a new market such as costs, legal issues, capabilities, and so forth. For a vehicle manufacturer considering adopting an aggregator role, these aspects become very relevant when assessing whether the market is profitable. There is currently no clear model outlining which factors should be taken into account in this situation, nor is there a framework for how these factors can be translated into something practically applicable. Therefore, the research question can be broken down into the following sub-questions:
+* What are the primary factors influencing actors in a future aggregator role?
+* What factors relate to, and can be leveraged by, an OEM?
+* How is the aggregator role affected by differences between energy markets?
+* What do EV users value when choosing an aggregator?
+In order to address these questions, this thesis will review the current state of energy markets, V2G, and the aggregator role. The analysis is limited to the Swedish market only in order to limit the area to a contained system with one transmission system operator (TSO). However, the goal is for the conclusions to be somewhat applicable to similar markets. The thesis focuses on the aggregation of private vehicles. In certain situations the vehicle might be owned and used by separate parties, this is the case in car fleets. These cases are not discussed in the thesis, as the aggregation process may vary when there is a different ownership structure involved.
+
+
+There are several connections between the investigated V2G technology and sustainability, which could be analyzed further. However, the scope of the study does not include analyzing the sustainability aspects of V2G. A brief description of the sustainable implications of V2G is instead given in Appendix 1, where it is linked to the UN 2030 agenda and its sustainability goals.
+1.3 Background to EVs in Sweden
+EVs can be divided into two main types, battery electric vehicles (BEVs) and plug-in hybrids (PHEVs). BEVs operate fully on electricity and PHEVs are powered by both electricity and internal combustion engines. Sweden is transitioning towards a fossil-free society with the aim of achieving net-zero emissions by 2045. The electrification of the transport sector, including personal cars, has been identified as an important factor to reach this goal. Sweden is involved in the project “Accelerating to Zero Coalition”, with the ambition of a 100% sales share of BEVs in 2035 on leading markets, and 2040 globally (Regeringskansliet, 2022). One of the focuses of the project is to overcome barriers in order to accelerate the production of zero-emission vehicles, i.e., BEVs. In a report from Stockholm Chamber of Commerce (2020), the mid-scenario for the number of electrified cars by 2030 is set to 2,6 million.
+
+
+
+
+  
+
+Figure #. Registered cars in Sweden, with % EV on the right-hand axis. (SCB, 2023)
+
+
+PHEVs had an earlier penetration of the market, but the total number of BEVs exceeded the number of PHEVs in 2022. The share of BEVs among registered cars was a third in 2022, while it was less than a fifth in 2021. During 2022, 96 000 new BEVs were registered, which is why there currently are around 200 000 BEVs in Sweden (SCB, 2023). In total, there were at the end of 2022 a total of 370 000 electrified cars in Sweden. Although the current share of electrified cars is low, the trend is exponentially increasing, especially for BEVs, which can be seen in Figure #. V2G is possible for BEV and PHEV. These two types of vehicles are jointly referred to as electric vehicles (EVs). 
+1.4 Introduction to The Swedish Electricity System
+The Swedish electrical grid is an alternating current (AC) system consisting of approximately 17,000 km of power lines that connects to the other Nordic countries (Svenska kraftnät, 2021c). The Swedish grid consists of the national grid, regional grid, and local grids. The national grid is a transmission grid that connects large electricity producers to the grid and transfers electricity over long distances with low power loss. Svenska kraftnät (Svk) is Sweden’s responsible authority for the power system and manages the transmission grid, and is referred to as the transmission system operator (TSO). The local grid transfers electricity to most end users such as private consumers and companies. Micro-producers, such as owners of roof-mounted solar panels, can be connected to the local grid. Local network operators own and manage the local grids, and are called distribution system operators (DSOs). The regional grid connects the national transmission grid with the local grids. It also directly connects smaller electricity producers and large electricity consumers, e.g., large factories, to the grid (Svenska kraftnät, 2022). Each local grid has a contracted level of power that is allowed to be drawn from the regional grid, and uniformly, the regional grid has a contracted power level with the transmission grid, operated by the TSO. As explained by Etherden et al. (2022) the subscription limits are not equal to, but lower, than the physical constraints of the network's components. The limit is the threshold for power that can be fed into the grid without prior notification.
+
+
+The physical flow of electricity is thus through the electrical grid. For trading, Sweden’s electricity market is part of the Nord Pool Spot electricity market, and the Swedish market is divided into four different bidding areas. Most of the electricity produced in Sweden is traded on the Nord Pool spot market. Svenska kraftnät (2021b) explains that electricity suppliers and large energy consumers are the most common actors on the electricity market apart from electricity producers. Figure X depicts the relationship between the actors on the Swedish electricity market as well as the flow of electricity. Energimarknadsinspektionen (Ei) is the supervisory authority of the Swedish energy market, including the electricity market.
+  
+
+Figure X. Actors in the Swedish electricity system. Blue marking around BRP and electricity supplier specifies that these could be the same actor (Energiföretagen Sverige, et al. 2020).
+
+
+For the electric system to function properly, energy supply must be exactly equal to energy demand at all times. Svk has the overall responsibility for the balance between supply and demand on the Swedish grid, but this responsibility is delegated further down the chain to balance responsible parties (BRP) (Färegård & Miletic, 2021). To become a BRP a contract must be established with Svk and eSett Oy, the actor responsible for Svk’s financial settlements. A BRP is responsible for balancing supply and demand within a certain amount of outlet or inlet points, that is, any point from which electricity can be withdrawn or produced. As such, the BRP has to ensure that the electricity withdrawn from their respective outlet points is matched with supply from their inlet points, or by buying electricity on, for example, Nord Pool. For imbalances the BRP is accountable for, as shown in Figure X, it has to take the economic consequences for Svk to physically manage these imbalances.
+
+
+
+
+
+
+  
+
+
+
+Figure X. Overview of the balancing process upon a mismatch between supply and consumption (Färegård & Miletic, 2021)
+
+
+According to IVA (2017), measurement values and other control signals are used in long-term forecasts to plan the production in advance so balance is maintained. In the short-term perspective, frequency is used as an indicator of significant changes in the momentary balance and should always lie between 49.9 - 50.1 Hz (IVA, 2017). When the frequency diverges from these levels, frequency-regulating measures need to be taken.
+________________
+2 Theory
+The integration of renewable energy sources and the rapid growth of EVs have brought about new challenges and opportunities in the field of energy management. One of the key challenges is maintaining grid stability and frequency balancing in the presence of intermittent renewable energy generation. To address this, the concept of flexibility markets and the utilization of V2G technology have emerged as promising solutions.
+
+
+By studying literature related to the subject, theoretical foundations and concepts related to frequency balancing, flexibility markets, V2G technology, and the role of aggregators in this context can be explored. This chapter presents the underlying principles and mechanisms of these concepts. 
+2.1 Frequency Balancing 
+The momentary balance of the grid must be kept between 49.9 - 50.1 Hz. The Swedish grid is closely connected to the rest of the Nordic countries and the balancing responsibility is shared between the different TSOs who are all working to balance the frequency to 50 Hz. The balancing process is designed to tackle different stages of imbalance. The BRP is responsible for creating a plan to ensure equilibrium between the production of energy and consumption. This is done for every hour of every day. However, deviations from these plans occur due to uncertainties in both production and consumption. To handle these deviations, Svk is responsible for monitoring and maintaining the balance in real-time with the help of balancing services, a type of ancillary service (Svenska kraftnät, 2021a).
+
+
+Svenska kraftnät (2023e) portrays a transition of the energy system to include more renewable electricity production, resulting in greater challenges balancing supply and demand and due to renewable energy source’s unpredictability. This causes an increase in the future demand of power reserves to provide balancing services. The reserves consist of production units that can adapt their electricity production or energy storage by being temporarily drawn upon or released when the balance of the grid fluctuates (Svenska kraftnät, 2023e). The fluctuations occur when the momentary power usage doesn’t match the power produced, power being the rate at which energy is being transferred. Power reserves can be used to adjust both the power production and the power usage. Up steering is used when the frequency drops below 50 Hz, which is a result of the consumption being higher than the production of electricity. In order to restore the frequency, power reserves are used to increase power production. Down steering is used when the frequency goes above 50 Hz, where either power production is decreased, or power usage is increased. The power reserves are provided by external partners contracted by Svk. 
+
+
+After every operating hour, the cost of the power services activated by Svk is divided among the BRPs responsible for the imbalance. Svenska kraftnät (2023e) highlights a total of four reserve types with different requirements. The requirements partly consist of different endurances and response times in order to handle frequency deviations at different stages. Amongst these four reserves, one type is Frequency Containment Reserves (FCR). In order to enter any of the FCR markets one must have a contract concerning balance responsibility with a BRP and an approved prequalification, in which it is checked that all technical specifications for the market are met. FCR has the task of stabilizing the frequency for any deviation and is crucial in maintaining the balance. FCR are divided into three different types, more specifically, Frequency Containment Reserve - Normal (FCR-N), Frequency Containment Reserve - Disturbance upward (FCR-D up) and Frequency Containment Reserve - Disturbance downward (FCR-D down). 
+
+
+FCR-N is essential for stabilizing the frequency during time of deviation by up or down steering (Svenska kraftnät, 2023b) and is automatically activated during frequency deviation ranging from 49.9 - 50.1 Hz. The reserve is procured symmetrically for upward and downward regulation and is activated within 3 minutes with an endurance of 1 hour. FCR-N is used during normal operation, where normal entails deviation in frequency not considered a disturbance resulting in longer activation times compared to FCR-D. Minimum bids for FCR-N are 0.1 MW where trades for up and down steering are made one and two days before operations respectively (Svenska kraftnät, 2023b).
+
+
+FCR-D is an additional Frequency Containment Reserve activated during disruptions (Svenska kraftnät, 2023c). Similar to FCR-N, the reserve’s minimum bids are 0.1 MW, but in comparison, activated within 30 seconds with an endurance of 20 minutes. It consists of two different reserves, one used for up steering and one for down steering. FCR-D up is automatically activated linearly within a frequency interval between 49.9-49.5 Hz with up steering to reach an ideal level of 50 Hz. FCR-D down has an activation interval between 50.1-50.5 Hz with the same activation time as FCR-D up, hence utilized for down steering (Svenska kraftnät, 2023d).
+2.2 Flexibility Market 
+Electricity consumers are to an increasingly greater extent charged for their momentary power strain on the grid in addition to their actual energy consumption (Energimarknadsinspektionen, 2023). That is because the power supply is not only limited by the total power produced, but also by the subscription levels between transmission, regional, and local grids. This means that additional power could be produced nationally or regionally, but the local grids wouldn't be able to access it. Network operators have historically dimensioned the regional and local grids based on the highest expected peak load (Energimarknadsinspektionen, 2020). That is no longer a rational approach with the ongoing electrification of society and the shift towards more renewable energy sources because of the costs associated with meeting the theoretical peak loads. 
+
+
+If the power usage was less volatile, or to some extent could be controlled, the capacity requirements and risk of grid congestion would be reduced. This can be accomplished by reducing power usage during peak hours, or by increasing power supply within the local grid, which can be achieved by local flexibility markets (Vattenfall Eldistribution, n.d.). Flexibility is in this case the ability to meet power variations originating from both supply- and demand-sides, which can be provided through demand-side flexibility and supply-side flexibility (Ahmadiahangar et al., 2020). Demand side flexibility refers to the act of reducing the use of electricity, lowering the needed power, while supply-side flexibility refers to increasing the produced power. As explained by Svk (2021b), this means that an energy consumer either temporarily reduces its power withdrawal or increases its electricity production, an act that can be sold as a flexibility service.
+
+
+The purpose of a flexibility market is to create a marketplace for electricity consumers, electricity producers, and the DSO to trade flexibility. When power demand is expected to reach straining levels, flexibility services can flatten the demand curve by postponing power usage to a time with lower power demand. A flexibility market is parallel to the wholesale electricity market and does not require large additional investments (Liu et al., 2021). 
+
+
+An important element of flexibility markets is the value of flexibility (Noel et al., 2019). The true value of flexibility depends on the investments in the electrical grid that can be avoided by the use of local flexibility. Validating that the procured flexibility is actually delivered is done against a consumption baseline, which marks what the power usage would have been if the flexibility of the actor was not used. A problem arises if actors don't accept the calculations of these baselines as actors will dispute the settlements, causing clear settlement rules and well-defined pricing models to be important in order to make flexibility markets attractive.
+Local flexibility markets have recently been introduced in Sweden, of which SthlmFlex and Effekthandel Väst are two examples. Both markets are constructed as open markets where flexibility service providers located within the local grid can participate and bid their flexibility. Effekthandel Väst covers two local grids with separate DSOs, while SthlmFlex covers four DSOs, enabling flexibility providers to sell flexibility to respective DSOs. 
+
+
+The market operator for both Effekthandel Väst and SthlmFlex is NODES, an independent market operator providing a marketplace for trading decentralized flexibility and energy. Flexibility is traded in terms of power (MW) on an hourly basis, where the minimum bid size is 0.1 MW (Nodes, 2022). Multiple resources can be aggregated into a trading portfolio to reach the minimum bid size. Flexibility is traded in the two products ShortFlex and LongFlex, where Shortflex is flexibility traded in close to real-time on a continuous market, and LongFlex is contracts that ensure the DSOs submit ShortFlex bids during the contract hours. Compensation for ShortFlex is of a pay-as-bid structure, while compensation for LongFlex consists of both an availability pay and an activation pay.
+2.3 Vehicle-to-Grid
+Described by Willett Kempton and Steven E. Letendre as early as 1997, electric vehicles have the capability to act as a power source for electric utilities (Kempton & Letendre, 1997). Although a vague definition, this stated the concept of V2G, to use the battery inside of an EV to store electricity for the benefit of the electrical grid. The stored electricity can be used by the grid when necessary, supporting the electrical grid as a whole. The concept of V2G, together with the underlying technology, applications, and value network must be described in order to fully understand what V2G can offer the Swedish electricity system. 
+
+
+In terms of how the V2G technology functions, Noel et al. (2019) highlights the need for an EV with V2G capability and a compatible bidirectional charger. Bidirectional chargers are two-way chargers capable of not only charging the battery, but also discharging it, which is essential in order to provide electricity back to the grid. Noel also demonstrates that a total of 6–9 EVs may be combined to provide a total power of 100kW, whereas bidirectional chargers for household usage have a maximum capacity of roughly 10kW. 
+
+
+Noel et al. (2019) define three key elements of a V2G system. These are a power connection to the electrical grid, communication that regulates charging and discharging, and a means to audit the services rendered to the grid which in turn will regulate the level of compensation. Noel et al. further emphasize the importance of a communication pathway to direct the power flows.
+2.3.1 V2G Applications
+In line with the description of Kempton and Letendre, V2G is equivalent to a battery acting as a power source for the grid, providing it with power and electricity. The limitations of the ability to provide power are the batteries' state of charge (SoC), constraints imposed by the vehicle owner, and the potential power flow, limited by the charger (Dorrel & Mkhize, 2019). Noel et al. (2019) explain that although electrical systems differ over the globe, one can identify three general markets for V2G available in most electricity systems. These are baseload power, peak load, and ancillary services, which are all applicable to the Swedish electricity system. 
+
+
+The baseload power concept refers to the production of wholesale energy, typically by large hydro-, coal-, or nuclear power plants, that meet the constant energy demand of the market. These power plants benefit from economies of scale, low production costs, and limited requirements on flexibility due to long timeframes of market participation (Noel et al. 2019). Conversely, the characteristics of V2G technology make it unsuitable for the baseload market, as the limited energy storage capacity of EV batteries cannot provide energy at a competitive price when compared to large-scale power plants. 
+
+
+During periods of high power demand, baseload power sources may not be sufficient to meet demand. On these occasions, peak production plants are used, such as gas turbines running on fossil fuels. Actors providing peak load energy are more flexible but have higher production costs due to the less frequent occurrence of peak demand, which can be daily, weekly, or even less frequent. As the price of electricity is higher during demand side peaks, energy arbitrage can be performed during these peaks. Kocer et al. (2021) refer to energy arbitrage as selling electricity stored in the EV during times of high demand, for higher prices, and charging the vehicle when the electricity price is at normal levels. This is also sometimes referred to as peak shaving or peak shifting. Although a possible application and revenue stream for the EV user, Noel et al. (2019) state that this kind of service is not optimal nor the best use case for V2G. That is because peak power is energy-intensive, peak frequency differs and can be low, and peaks can be hard to predict. 
+
+
+Instead, Noel et al. (2019) claim that the best-suited market for V2G is ancillary services, in particular frequency regulation, which in Sweden is handled by Svk. The need for frequency regulation is continuous, and the duration time of frequency containment reserves (FCR) ranges between 20 to 60 minutes with bid sizes starting at 0.1 MW. This implies, as described by Noel et al. (2019), that frequency containment reserves require high power capacity but limited amount of energy at short response times. Also, the service is remunerated based on the provided available power and not the exchanged energy. This service represents a good match with the characteristics of V2G technology as the EV battery is a limited energy resource but is capable of providing high instantaneous power (Zecchino et al., 2019).
+
+
+V2G is also a suitable technology to be used in local flexibility markets, e.g. Effekthandel Väst in Gothenburg. Flexibility sold on a flexibility market consists of both reduction of power outages as well as increased electricity production. This means that V2G could contribute both as demand-side flexibility, where charging is temporarily ceased during the delivered period, and as a supply-side flexibility where power is provided to the grid (Noel et al. 2019). Flexibility is sold on an hourly basis, making it as energy intensive as FCR and a fair match for V2G.
+2.3.2 V2G Value Network
+The concept of prosumers is gaining traction in the energy sector. According to Ahmed and Etharden (2021), prosumers are referred to as individuals both consuming and producing energy. The authors further explain that flexibility solutions from prosumers provide stability to the power system, and in combination with renewable energy, it may offer the lowest cost power solution in the future. The emergence of prosumers is highly relevant in the context of V2G where individual EVs can be used for battery storage, and where the EV users both consume and produce electricity by providing it back to the grid. This makes the EV users a key actor in the V2G value network, as this is the actor receiving and delivering value in the form of electricity with bidirectional charging.
+
+
+Noel at. al (2019) illustrates two additional actors within the V2G value network besides the EV user;  aggregators and grid operators. Aggregators are intermediaries that collect multiple EVs and subsequently offer their collective capacity to the grid. A single EV cannot meet the minimum bid of the balancing market due to its limited capacity. Hence, the aggregator enables EV users to establish a connection with the grid, manages charging and discharging, and ensures that the energy provided meets the requirements of different markets. 
+
+
+Noel et. al (2019) describe the grid operators as the actors responsible for managing the electrical grid and ensuring that the supply of electricity matches the demand. These operators include TSOs responsible for the national grid, and DSOs responsible for the local grid. The TSO buys balancing services in order to match demand with the consumption of electricity, making the TSO a customer of ancillary services. In the context of a V2G network, the TSO can be seen as a customer buying balancing services from an aggregator that accumulates multiple EVs’ capacity. On a local level, such as local flexibility markets, the DSO becomes the customer buying flexibility.
+ 
+The issue of the unpredictable and fluctuating nature of EV charging and discharging could cause instability in the electrical grid due to actors such as the aggregator not being able to deliver the promised capacity in time (Axsen et al., 2018). Therefore, actors in the V2G value network need to collaborate and communicate. This is highlighted by Noel et. al (2019), stating that the performance of a V2G system is a result of its design and implementation. Also, if all stakeholders are benefited appropriately, the likelihood of it becoming a successful system increases. 
+
+
+Axsen et al. (2018) illustrate that the initial step in V2G involves the EV user plugging in a charging cable into the vehicle after it is parked. The willingness of EV users to participate is highly dependent on the presence of appropriate incentives that take into account factors such as battery degradation, flexibility and inconvenience. The incentives can be in the form of monetary compensation, reduced energy costs, or other benefits. The author further highlights the unpredictable and variable nature of individual EV charging and discharging patterns causes an increased instability of aggregating such resources. To address this challenge, the aggregator needs to ensure adequate capacity to meet the needs of the grid, either through securing additional resources in the form of more EVs, or by using forecasting techniques and developing effective communication and control strategies with EV users to ensure that they are able to adjust their charging and discharging patterns in response to grid demand.
+2.3.3 V2G Prosumers
+Though the primary concern of an EV is ensuring mobility, it has been shown that the majority of EVs’ are utilized only for about 5% of their lifetime (Sommerset Busengdal et al., 2022). In addition to this, a study carried out in Denmark found that the majority of EV users prioritize charging their vehicles at home and consider the cost of home charging to be important (Visaria et al.). There is potential value for the individual EV owner in adopting a V2G solution where the EV could be utilized profitably instead of being left unused 95% of the time.
+
+
+An essential part of commercializing the V2G technology is the implementation of smart charging. Smart charging refers to controlling and optimizing charging based on electricity price and availability. An important aspect of this technology is the prosumerss’ willingness to adapt their charging behavior. Today, a majority of EV users are positive about the adoption of smart charging, however, due to lack of insight into how the technology works, there is a barrier to overcome (Sommerset Busengdal et al., 2022). The users require three features; uncomplicated usage, transparency and control of charging sessions when necessary. Additionally, they fear their cars won’t be sufficiently charged upon using them, resulting in a reluctance to take part in supporting the grid. 
+
+
+Another study demonstrated that range anxiety and minimum range are crucial factors when it comes to adopting V2G technology, which further reinforces the aforementioned claim (Geske & Schumann, 2018). Furthermore, the authors argue that there is a difference in how EV users who travel long distances perceive the technology compared to those who travel shorter distances, with the latter being more willing to adopt V2G. Monetary incentives will hardly change the reluctance to adopt for long-distance EV users. The study also suggests that high adoption rates can be achieved without monetary incentives as long as there is a reasonable and transparent V2G solution that accommodates both foreseeable and unforeseeable mobility demand.
+
+
+In a study where potential V2G users were given the opportunity to test the technology, the results indicated that acceptance primarily depended on four key factors (Ghotge et al., 2022). One such factor was that the effects of using V2G was clearly communicated to the users. This included the economic benefits of using the technology, the effects on the battery, and the societal and environmental value of V2G. Additionally, the users wanted financial compensation covering the battery degradation of V2G charging. A third aspect was transparent information on battery charging in real-time, and finally, the ability for the users to opt out of V2G charging and set their own parameters when participating.
+
+
+The work of Ghotge et al. (2022) also demonstrates, in contrast to prior research, the significance of financial compensation for consumers who provide flexibility. Additionally, the study reinforces that being in control of the charging process is essential. However, it asserts that for prosumers, the focus is more on setting minimal range and SoC rather than actively managing the charging process themselves.
+
+
+EV users may have different reasons for adopting V2G, and different incentives need to be identified for each customer segment (Langenhuizen et al., 2022). Langenhuizen et al. outline three main types of individual prosumers; financially, environmentally, and socially motivated ones. The financially motivated prosumers are looking to pay as little as possible for electricity and being financially compensated for losing flexibility whereas the environmentally motivated ones are driven by their desire to contribute to a more sustainable society. Socially conscious prosumers are mainly incentivized by avoiding grid congestion and fair use of the grid overall. 
+2.4 The Aggregator Role
+Aggregators serve as intermediaries between consumers, such as individual EV users, and the general electricity market (Färegård & Miletic, 2021). They establish agreements with flexible resources and are then able to control their power loads according to these agreements, freeing up power that can be used when needed. The requirements for trading on electricity markets often consist of larger capacities than what a single household can provide, thereby highlighting the need for aggregators on the electricity market. 
+
+
+Färegård & Miletic (2021) further emphasize the importance of aggregators by pointing out that they possess valuable knowledge about the complex process of commercing and coordinating flexibility. Private consumers may not carry this awareness, limiting their ability to trade flexibility individually. Nonetheless, aggregators working with smaller prosumers are relatively new in the Swedish electricity system. With the ongoing shift towards an increasingly flexible electricity system, increased emphasis has been brought on the aggregator role, which according to Färegård & Miletic (2021), is gaining momentum. As the Swedish electricity system continues to grow, aggregators will have an essential role in enabling its development.
+2.4.1 Aggregation Models
+Färegård & Miletic (2021) further suggest that the aggregator role can be divided into three types of models that operate on different levels. The first model is described as a market aggregator (MA), which conceptually is a portfolio of assets. These assets consist of other aggregators, specifically technical aggregators (TA). While technical aggregators possess the technical product, they may lack market requirements or viable business models that cover the whole value chain. The MA gathers several TAs as sub-contractors and can then take over the balancing responsibility from each TA, either by making agreements with the BRP or by becoming BRP themselves. An MA can be seen as a market integrator for sub-aggregators who in turn are technologically equipped, creating a symbiotic relationship between the two. 
+
+
+The third aggregator model can be seen as an integrated model of the other two and is called an independent aggregator (IA) (Färegård & Miletic, 2021). IAs should be able to operate independently from other aggregators, which in practice means they can acquire new flexible resources without involving any other actor. Subsequently, the IA should, independently of other actors, be able to acquire new resources that have different electricity suppliers. Currently, the Swedish electricity market doesn’t allow independent aggregators. 
+2.4.2 Independent Aggregation
+To ensure equal conditions for all aggregators on the market, the EU has decided on a set of common rules for how aggregators should act on the electricity market (Ei, 2021). These rules state that aggregators should have access to all markets without consent from the customer’s existing electricity supplier or BRP. This concept is known as independent aggregation and means, in addition to promoting IAs, that a customer should be able to choose an aggregator independent of their current electricity supplier or BRP. 
+
+
+Energimarknadsinspektionen (2021) highlights that in addition to aggregation, aggregators are currently responsible for balancing. This means that an actor may only deliver electricity if it also takes responsibility for supplying the same amount of electricity as is being consumed at each outlet point. In practice, this means that an aggregator would need to be responsible for the EV users’ entire electricity supply in order to acquire the flexibility offered by the user. Alternatively, this responsibility can be delegated to a BRP but this requires consent from the BRP, making it difficult to grant aggregators independence and goes against the goal of independent aggregation. Svk (2023a) states that the role of a BRP will be divided into two roles, consisting of balance service providers (BSPs) and BRPs, where the BSP would be responsible only for delivering balance services while the responsibility of a BRP concerns preventing imbalances from other market actors. The goal of this reconstruction is to remove barriers from  the market and create opportunities for additional actors to provide balancing services by becoming BSPs.
+2.4.3 V2G Aggregation
+Noel et al. (2019) reason that in a V2G system, the aggregator can be seen as the principal actor as it is the entity that enables the bidirectional interaction between EVs and the electrical grid. When the V2G market reaches personal vehicles and individual EV users, established organizations can embody the aggregator role. This could, for example, be actors such as electricity suppliers or providers of charging stations. Such companies can easily enter agreements with EV users for their household and EV power services. Although important for V2G, the aggregator role is far from fully explored which is further complicated by the relatively dynamic and fast-paced V2G environment (Sovacool et al., 2020.)
+
+
+A V2G aggregator, as explained by Sovacool et al. (2020), has to fulfill technical, business-related, regulatory, and societal dimensions. Technical aspects include algorithms to minimize technical impacts and maximize privacy, while business-related dimensions involve developing sound business models. The regulatory dimensions mean understanding and handling regulatory barriers, and societal factors revolve around encouraging EV users to use V2G as well as educating them of its benefits. The perspective of Färegård & Miletic (2021) is however that different aggregation models can be used in order to focus on just some of these dimensions.
+Sovacool et al. (2020) further describe that aggregators can offer stability as market participants through the implementation of predictive- and control algorithms. Aggregators can obtain data from previous charging behavior which in turn can be used in order to estimate the available aggregated resources for future market participation. The business model, and which markets to participate in, will vary between geographical regions depending on local contexts, but also need to be flexibly designed to match the evolving benefits of V2G. Noel et al. (2019) note that as the V2G market evolves, the business models and aggregator models will increase in complexity. The aggregator will have to handle various types of transactions involving different actors depending on the market, each with its unique pricing structure. Simultaneously EV users want information about what transactions, both financial and physical, are taking place.
+V2G has the potential to both challenge and innovate the current electricity- and transport business landscape. At the same time, as reasoned by Sovacool et al. (2020), this opens new business opportunities for established organizations in these sectors. EVs are expected to reduce the maintenance revenues of OEMs, threatening their business case. However, OEMs can create new revenue streams by embodying new roles within the V2G environment. One such role could be the aggregator role.
+________________
+3 Method
+
+
+There are primarily two different methodological approaches, qualitative and quantitative methodology (Blomqvist & Hallin, 2014). Since the report deals with a relatively new and unexplored topic and has an exploratory nature, the investigation has been conducted with a strong qualitative character, where data collection and analysis methods prioritize the use of words rather than numbers. The purpose is to provide a contextual understanding, leading to the qualitative methodological approach being the most suitable, as it focuses on rich and nuanced data.
+3.1 Data Collection
+The data collection was done partially using the interview method, which Blomqvist & Hallin (2014) consider appropriate when seeking to develop a deeper understanding, discover new dimensions, or find ambiguities in a phenomenon which is in line with the purpose of this study. The interviews conducted were semi-structured. Semi-structured interviews are organized around a set of predetermined topics or questions that the interviewer seeks insights into, which are listed in an interview guide (Blomqvist & Hallin, 2014). This type of interview is flexible as the interviewer can deviate from the guide if they identify something interesting during the interview, but overall, the same types of questions and phrases are used for all interview subjects (Bell et al., 2015). The reason for choosing this approach was that flexibility, in the form of follow-up questions, and comparability can be leveraged to collect rich data and personal reflections. This is important in an explorative study, especially since the research topic is relatively unexplored.
+
+
+The second part of the data collection process involved conducting a survey to gather information about EV users’ perspectives. The survey was qualitative, which means that the focus was on drawing conclusions from the results and the qualitative aspects of the responses. Consequently, no importance was given to statistical accuracy in the survey so, the survey is not statistically representative of the entire population, as a random sample was not used. However, there is value in gaining insights into various opinions and perspectives from those who participated in the survey.
+3.1.1 Interviews
+At the beginning of the data collection, six semi-structured interviews with a low level of structure were conducted, which is a useful approach to explore a research topic without knowing specifically what to investigate (Blomqvist & Hallin, 2014). The interviews were conducted without pre-defining an interview framework, except for a general topic that the interview aimed to provide insight into. In advance, the topic "The Value Chain for V2G" was sent to the respondent. Based on the respondent's role and knowledge, they were given the freedom to reflect on the topic and were provided with space to develop their thoughts and ideas. These interviews primarily served as a foundation for further work on the report and to provide an increased understanding of the research topic. All group members participated in these sessions to establish common knowledge and they were conducted digitally. 
+
+
+The sampling for the first six interviews was made using an opportunistic sampling method, which means that respondents were selected based on their connection to the research group (Casell, 2015). In addition, a snowball sampling method was used, where some of the respondents were selected based on recommendations from previous respondents. Table # below illustrates the respondents for the first interviews. 
+
+
+Table #. Interviewees of the initial interviews.
+Actor
+	Role
+	Car Manufacturer
+	Product Owner
+	Car Manufacturer
+	Senior Director
+	Car Manufacturer
+	Attribute Owner
+	Car Manufacturer
+	Strategy & Business Developer
+	Energy Supplier
+	Development Strategist
+	Energy Supplier
+	Balancing Market Analyst
+	
+
+Following these interviews, 13 semi-structured interviews with a higher level of structure were conducted with different types of actors in the V2G value chain. Prior to conducting these interviews, an interview guide was created, in which areas of interest were identified as a basis for the questions that were posed during the interviews. These areas were determined based on the reviewed theory and the interviews that had been conducted previously. The focus during the interviews was on understanding the respondent's perspectives on the topics, and they were given the opportunity to explain their views, which is important for a qualitative study (Bell et al., 2015). The interviews were conducted digitally, and three members participated during each interview, with two focused on leading the interview and asking follow-up questions and the third taking notes and identifying key segments. 
+
+
+The types of actors that were deemed interesting to interview were selected based on the reviewed literature and the first six interviews. Actors within the electricity sector, OEMs, and aggregators were identified as interesting due to their influence on the market. Individuals with relevant roles in the development of V2G or aggregator services within these organizations were identified and contacted via email, and meetings were scheduled. The sampling was limited to actors operating on or intending to enter the Swedish market. Table # below illustrates the respondents from the semi-structured interviews.
+
+
+Table #. Interviewees of the second round of interviews.
+Code
+	Block
+	Actor
+	Role
+	ES1
+	Electricity Sector
+	Electricity Supplier
+	R&D Strategist
+	ES2
+	Electricity Sector
+	Electricity Supplier
+	Development Strategist
+	ES3
+	Electricity Sector
+	Network Operator
+	R&D Portfolio Manager
+	ES4
+	Electricity Sector
+	Network Operator
+	Manager Flexibility Market
+	ES5
+	Electricity Sector
+	Electricity Market
+	Senior Advisor on Market Design
+	ES6
+	Electricity Sector
+	Electricity Market
+	Market Manager 
+	OEM1
+	OEM
+	Car Manufacturer
+	Product Owner
+	OEM2
+	OEM
+	Car Manufacturer
+	Product Owner 
+	A1
+	Aggregator
+	Aggregator
+	Product Manager 
+	A2
+	Aggregator
+	Aggregator
+	Innovation Project Manager
+	A3
+	Aggregator
+	Aggregator
+	Business Developer
+	A4
+	Aggregator
+	Aggregator
+	CEO 
+	A5
+	Aggregator
+	Housing Association
+	Chairman of the Board
+	
+
+3.1.2 Survey
+In addition to the interviews, a survey method was employed as part of the data collection process. The objective of the survey was to complement the interviews with data related to EV users’ preferences when choosing an aggregator. 
+
+
+The distributed survey included a set of structured questions based on the theory and the early interviews. These questions were designed to collect data on what factors were important for private EV users in the choice of an aggregator. Additionally, the survey included questions about the respondents’ car brand and ownership status, in order to capture whether these factors influenced their responses.
+
+
+The survey was distributed in three social groups on Facebook, illustrated in Table X. These groups were selected based on their relevance to electric vehicles and their location in Sweden. The reason for choosing to distribute the survey in these groups is that their members are active, well-informed, and interested in the topic, which is essential for receiving meaningful responses to the survey. Another consideration that was made when selecting the groups was the assumption that most individuals in these groups have access to and drive an electric vehicle, which is also reflected in the results. All members of the groups had access to and were eligible to participate in the survey, which was open for one week between 2023-04-19 and 2023-04-26 and yielded 234 answers.
+
+
+Table #. The social network groups of the survey. 
+Name
+	Number of members
+	Elbil och laddhybridbil i Sverige
+	15 500
+	Elbilsladdning Sverige
+	12 100
+	Elbil Sverige Forum och Diskussion
+	2 300
+	3.3 Data Analysis
+Once conducted, the interviews were transcribed partially through word-for-word transcription of the parts deemed relevant during the review of the recordings. Notes taken during the interviews were helpful in this process. Since the interviews were conducted in Swedish and the report is written in English, the quotes have been manually translated into English by the authors. Once all the interviews were transcribed, a qualitative data analysis was conducted in the form of a thematic analysis.
+
+
+Blomqvist & Hallin (2014) describe a thematic analysis as a relevant and commonly used method for analyzing qualitative studies. The method involves categorizing the empirical data into different themes, which can either emerge during the process of reading through the data or be predetermined. Bell et al. (2015) suggest that a useful approach for identifying themes is to look for repetition, similarities, and differences in the data. 
+
+
+The thematic analysis in this study consisted of 4 steps, which are described below.
+
+
+1. An overall understanding of the empirical data was formed by becoming familiar with the material. The transcripts were read multiple times to gain a deep understanding of the content of each interview.
+2. The data were coded using descriptive codes such as "Barrier", "Potential aggregator", and "Capabilities" to identify relevant and interesting sections in the transcripts.
+3. Codes of similar nature were grouped together to form common themes. These themes were reviewed and revised to create themes that were as clear as possible. The themes are the headings in the result chapter and can be seen in Table X in section 4.1.
+4. The content of the categories was analyzed to understand the implications of the themes and the material in relation to the research questions. This was done separately for each theme, and then a comparison was made to identify relationships or patterns between the themes.
+
+
+Even though the data collected from the survey is quantitative, the results have been analyzed using a qualitative approach. This means that factors such as standard deviation or similar statistical measures have not been given much importance. Instead, the data has been interpreted from the perspective of EV users, taking into account their perceptions and perspectives and using the data to complement the interviews. The aim has been to understand what factors influence the choice of aggregator.
+
+
+
+
+
+
+
+
+________________
+
+
+4 Results and Analysis
+The findings from the interviews have been organized into themes, shedding light on various aspects related to the role of aggregators in V2G networks. The results from the survey are presented and analyzed separately.
+4.1 Interviews
+Based on the analysis of the interview material, seven themes were determined with the aim of summarizing the key topics and differences raised during the interviews to address the study's research questions. The seven themes are displayed in Table X below.
+
+
+Table X. Themes for analyzing the interview data.
+Themes of the Result and Analysis
+	The Aggregator Role
+	Barriers for V2G Aggregators
+	Central aspects for V2G Aggregators
+	Differences Between Possible Aggregator Markets
+	Actors Suitable for an Aggregator Service
+	Suitability of an EV Manufacturer as an Aggregator
+	Aggregators and EV Users
+	4.1.1 The Aggregator Role
+The respondents’ explanations of an aggregator was generally concordant. According to them, an aggregator is an actor that collects a number of resources to facilitate a process that is complicated to do on an individual level. Respondents from the electricity sector provided a description to highlight that aggregation isn’t anything new. ES1 exemplified this by saying “I would say that already today the electricity industry works with aggregates, so to speak. I mean, they don't take the electricity consumption of each individual house and put it on the market, but rather the electricity supplier gathers it together like an aggregate and puts it on the market.” ES5 also defined electricity suppliers as a sort of aggregator and dated it back to the deregulation of the Swedish electricity market in 1996.  
+
+
+In regards to aggregating resources such as EVs, the respondents also had a similar definition. As described by respondent A4, and similarly by others, an aggregator monitors and controls distributed energy resources, which collectively can deliver some type of value to someone. It is also possible to say that the aggregator creates and controls decentralized battery storage. ES1 emphasized that when aggregating and selling power or capacity from EVs, the vehicle's batteries actually have to be controlled. Although aggregation of customers has been done before, as in the example of electricity suppliers aggregating customers' demand, controlling something owned by the aggregators has not yet been done. 
+
+
+ES2 further defined the aggregator as an actor that technologically and administratively creates the possibility to provide an aggregated service. OEM1 raises the perspective of aggregating in order to control multiple assets uniformly, it is also important to be able to control the resources individually. Although most respondents seem to have a homogenous view of the aggregator role, the area is new. OEM2 expressed a perception that the terminology within the subject is ambiguous which can make dialogues complicated.
+
+
+Some respondents described the aggregator role on a more practical level. ES6 explained that larger organizations, e.g., Vattenfall, can act as an aggregator of minor aggregators, which would allow for the participation of smaller aggregators in some markets. According to A2, TAs solve the technical integration of energy resources, meaning that they don’t need to have knowledge of how to act on different markets and the regulatory requirements that follow.
+4.1.2 Barriers for V2G Aggregators 
+The respondents acknowledged that several agreements have to be in place in order to make V2G available for an aggregator. In the current Swedish V2G landscape, all aggregators must cooperate with a BRP. A4 highlighted that "In order to earn any money or generate revenue, you need to have the right electricity retailer who has an agreement with someone who has balance responsibility." Alternatively, the aggregator could take this responsibility and become a BRP. Some involvement from the car manufacturer is also required, as specified by ES3 "But if you really start to make it bi-directional, then the car manufacturer will detect that you are drawing power from the battery, and then the car manufacturer will need to approve it in some way." Beyond this, the electricity is transferred using the electrical grid, owned by the respective network owner. 
+
+
+The majority of the energy suppliers and aggregators agreed that the Swedish electricity market has tough requirements as it stands today. As for independent aggregation, the market climate is not currently applicable for the concept, which becomes especially problematic when aggregating smaller flexible resources like individual EVs. Taking this into consideration, A4 highlighted that "The minimum bid size is 100 kW. Then you need at least 30 households with 11 kW chargers if you are to guarantee 100 kW. Then you need to have 30 customers who preferably have the same electricity supplier and thus the same balancing responsible party." This could become problematic for smaller aggregators who may have a problem aggregating enough capacity within these limiting conditions.
+
+
+Most respondents were uncertain yet curious about the effects following a separation of the BRP and BSP roles, and agreed that the effect largely depends on how the legislation is formulated. There were some differences in opinion about the expected effects of this proposed change. Some respondents were skeptical about the formulation of the legislation and thus the impact of the separation. They believed that it might not achieve the expected independence among aggregators. A4 expressed "It does not look entirely optimal in any case to realize the BSP role", and ES2 went on to state“Much will depend on legislation. The Electricity Act can't even spell 'aggregator' today”. Some respondents went further and highlighted potential effects to the uncertainties brought up by the ongoing legislative proposal. ES3 explained: "As there is an awareness that there will be a change, there is uncertainty about how to act now, and whether to act at all, without knowing how it will turn out." The uncertainty of such future decisions that extensively influence V2G profitability can become a barrier for individual V2G aggregators as well as for the V2G network, as several stakeholders may refrain from taking action. 
+
+
+Some respondents had a more positive attitude and argued that if legislation is drafted correctly, it can facilitate V2G and enable independent aggregation. This not only makes it easier for new aggregators to enter the market but also benefits smaller established aggregators as they can avoid the challenges listed above in finding EV users with the same BRP. A few respondents also described that independent aggregation reduces complexity by involving fewer actors, ultimately leading to increased profitability as funds are distributed among fewer parties, ES4 "Perhaps it is also easier to make it profitable if there are fewer people to share the cake with." OEM2 brings up a possible backside with independent aggregation, though. "Independence sounds great. It's simpler, fewer steps, super good, but how will it work in practice? If any of you own a house or a business or a warehouse, will you then have two different contracts instead of one electricity retail contract? It becomes very complex for the customer."
+4.1.3 Central Aspects for V2G Aggregators
+One of the most fundamental characteristics highlighted was the technical ability to aggregate and control the vehicles. It was argued that the aggregator could outsource this or develop it in-house, but A2 stated that competence in how to use the software is equally crucial to having it. ”It's not enough to just pay for a platform. You need to know how to operate it”. It may be costly to have another party develop the platform, but even if this investment is made, the aggregator must be able to run the platform for its purposes.
+
+
+Aggregating enough capacity and flexibility was equally critical according to respondents. It was noted that the aggregator’s energy resources could be further aggregated into a larger portfolio of energy resources controlled by another aggregator. This actor could potentially be a market aggregator that would need technical abilities to control the portfolio. Besides having to reach the minimum bid size, ES2 brought up the fact that EVs aren’t constantly plugged in, and the aggregator may need a larger fleet size to guarantee to reach the promised capacity. “EVs have a meaningful battery capacity, but the disadvantage is that they’re not standing still all the time. This is why an aggregator of EVs is different from an aggregator of other resources. Because of that reason, you need more cars to get up to and guarantee capacity.”
+
+
+Respondents from the aggregator block expressed the importance of demonstrating aggregating capabilities to convince larger aggregators of becoming a part of their portfolio. However, several interviewees pointed out that it is not the aggregator that will ultimately decide whether an EV is connected. This decision instead lies among each EV user, implying that an aggregator trying to measure its aggregated capacity might not be as straightforward as just counting the EVs aggregated. A2 agreed with this and highlighted another important fact: “It's important to build trust with the customer by demonstrating that you have a successful project and know what you're doing.” A2 further explained that by achieving partnerships with established aggregators, one can also achieve results faster with less investment and risk, ”If there are companies that are already doing it, you have a higher chance of demonstrating it faster with less investment. Because if you want to do everything yourself, it's gonna take you years to develop all the capabilities and a lot of money. But you will not have tested that this works for the customers”.
+
+
+Besides aggregating vehicles, the energy block stated that V2G aggregators must be able to deaggregate earnings. This was emphasized by ES1, who reasoned, "Many cannot deaggregate, how will you distribute the profit to customers?" ES1 further explained that this could quickly become quite complex: "It becomes more complex if you have multiple products in the same portfolio. We have some electricity trading, some flexibility, some peak shaving. It’s like a stock portfolio that gives you a share of the profit. And who contributed to what? It becomes almost impossible to keep track of. Who gets what from the total earnings?" As such, an essential aspect of deaggregation is the ability to divide and segment EV users and markets, and to understand which resources have contributed to what earnings.
+
+
+Another type of segmentation was emphasized by A2, who expressed: "Not all the cars are equally flexible. If there's a car that's moving around all day, it's not flexible” and continued with “I think maybe you also need to segment your portfolio and say, I'm gonna start with the most flexible ones. Because this one is kind of a quick win. If you look at it without segmenting, you might end up with some cars that don't give you almost any flexibility and then it's a waste of time." This reasoning indicates that the resources needed for aggregating each car are similar. By segmenting the EVs based on use patterns, EVs with low availability can be filtered out. Such segmentation would likely increase profitability, indicating that effective segmentation becomes an essential aspect of becoming a successful aggregator.
+
+
+Respondents suggested that a difficulty with using EVs as a flexible resource is that these resources aren’t continually plugged into the grid. Several respondents agreed that in order to bid accurately, aggregators must be able to forecast when each EV will be plugged in and how much energy it can contribute to the grid. This requires reliable predictions based on data and statistical knowledge. Bids exceeding what the aggregator actually can contribute may result in expensive penalties and could ultimately cause the aggregator to be prohibited from participating in market activities. However, bidding significantly lower than the aggregator's actual capacity could result in unprofitability, and may cause the aggregator to lose its market share to more lucrative competitors who can offer better incentives to prosumers, as was explained by ES1. “There will be some type of elimination. The one who is good at forecasting will outcompete the one who is bad.”
+
+
+Several respondents acknowledged that most actors in the network are only experienced within their own operations. However, in order for an aggregator service to apply to a market, a broader competence that extends further than the internal expertise is needed. A2 exemplified it by saying “Markets are basically like super regulated, completely different from operating a car” and further explained that "if you want to add this expertise to your company, you have to buy someone.” Similarly, several other respondents believed that cooperation by separating tasks or sharing knowledge is crucial for an aggregator to become successful, one of which is ES4. "We want to listen and learn from the car manufacturers but at the same time they need to understand the challenges with the power grid, because it is like this, nothing is just black and white. Here we need to understand each other's conditions." Some kind of partnership, collaboration, or network has to be in place since almost no actor has the knowledge, nor the capacity to aggregate an entire market successfully on their own. A2 further emphasized the importance of cooperation. “What I see in the market is there's a lot of sophisti, like underestimation of what the effort to go to market” and ”it's not only doing a technical integration, then you need to know how to operate in the market, you need to know how to put the prices, how are you putting the bids” which is in accordance with what the other respondents answered. Depending on whether the aggregator chooses to act on the market independently or not, the extent of market knowledge may vary.
+
+
+The perceived need for cooperation and networks among the respondents implies that several actors will have to share the same revenue stream. “There's one cake and we need to share it,” according to A2. However, with multiple actors involved, one interesting point most respondents shared was that the more actors involved in the solution the less profitable it's going to be. It can be difficult to find a business model that is accepted by all parties whilst economically viable. A4 added that "Even though it could be quite a lot of money on a larger volume, it is still very little, for each individual it is not very much money." This indicates that getting a business model approved by all actors and attractive enough to get prosumers to connect might be a limiting factor for aggregators. 
+
+
+Finally, several respondents stated that one of the main differentiating strategies between aggregators will be the simplicity of the service and having an intuitive user interface. With several aggregators offering similar services and incentives, what will make actors stand out from the rest will be the ability to create a seamless user experience for EV owners. ES6 pointed out another aspect, stating that “The simplicity of the service is important, preferably with an intuitive app. Branding also becomes significant, as many choose an aggregator because it is trendy.” ES1 agreed and made it clear that creating a strong brand that customers trust will be important to win market shares.
+4.1.4 Differences Between Possible Aggregator Markets
+During the interviews, some respondents noted that individuals cannot independently engage in any of the three markets due to lack of infrastructure and volume required. ES3 highlighted that the frequency balancing market requires a minimum of 0.1 MW of combined power. ES4 did not provide a lower limit for flexibility markets in general as most are in an early stage but concluded that a pronounced volume was needed within a smaller geographical area. Both respondents added that at the moment the Swedish frequency balancing market does not allow independent aggregators since contracts need to be in place with BRP in order to produce electricity. This is not the case with local flexibility markets, and as emphasized by ES4, one can participate in these markets without a contract with a BRP. Moreover, A4 pointed out that the frequency balancing market in Sweden is more mature which could further explain why it's more regulated than the other markets. ES6 explained that to be able to act on the spot-price market, a trading license is needed which incurs high fixed costs.
+
+
+Other respondents discussed various characteristics of the three markets. Both ES4 and A4 highlighted one difference between the markets to be their response and activation time. For instance, the frequency balancing market requires a rapid response within seconds, with a relatively short duration, depending on the service. A4 added that this makes frequency balancing more predictable and that an EV user probably wouldn’t even notice a change of SoC when contributing power to the grid. A4 further explained that a flexibility market would likely employ a longer duration and response time and could shut off or power down non-essential electrical equipment. A2 explained that ”In arbitrage aggregation it's the machines that are making the trading whereas in the balancing markets, you don't really need that. It's more straightforward, the bids happen a day or two before. Wholesale markets need more technical capabilities.” This indicates the different aspects that aggregators must handle to participate in these distinct markets.
+
+
+Two interviewees, A2 and ES4, held similar views on the future of the frequency balancing market. A2 expressed that “The main issue that's happening right now is that balancing markets are getting quite saturated in the countries that are open, mainly because now there's a lot of new energy storage capacity coming in.” A2 elaborated that this is likely due to the high profitability that frequency balancing services have experienced in recent years. Similarly, ES4 predicted a saturation in the frequency balancing market, but also highlighted the future significance of the flexibility market in the local grid. ES4 anticipated that around 50% of the local capacity requirement could be met through a local flexibility market in the coming years. Both ES3 and A2 anticipated that energy arbitrage will become more profitable in the future due to increased spreads on the spot-price market. ES5 claimed that this is becoming increasingly popular particularly with traditional electricity suppliers.
+4.1.5 Actors Suitable for an Aggregator Service
+A trend emerging from the interviews was that a majority of the respondents identified electricity suppliers as being interested and capable in pursuing an aggregator role. Having a large customer base, being well-established and being knowledgeable within the electricity sector results in electricity suppliers being suitable actors for aggregating electricity. A4 illustrated why electricity suppliers are eager to pursue  an aggregator role by stating the following: “Electricity suppliers are very keen to be able to use the staff and the people they currently have who are working with balance, various forecasts and so on”. A4 elaborated with: “Using your existing employees for delivering another service to create a new or increased revenue stream is understandably very interesting for electricity suppliers”.
+
+
+Respondent ES1 also determined electricity suppliers as being a suitable actor for creating an aggregator service. When asked what advantages an electricity supplier possesses for creating an aggregator service compared to other actors, ES1 responded with: “Advantages with bundling up [electricity supplier and aggregator] is the fact that the customer gets one contact, an electricity suppliers can sell both electricity and flex concurrent and offer everything on one invoice which is positive from a customer’s perspective.” Hence, using the electricity supplier as an aggregator increases the convenience for prosumers. ES1 further explains how an energy supplier's brand might positively influence an EV user’s willingness to join an aggregator service because of brand loyalty and being well-known. OEM2 emphasized electricity suppliers as being suitable actors likewise, by expressing the following: “Electricity suppliers possess a different precondition that is more to their advantage to actually aggregate on these markets. They already have direct contact with customers, they own the electricity contract with customers, one can see that the electricity supplier retains a finished financial mechanism for repaying customers”. 
+
+
+Respondents emphasized a high possibility of new actors establishing themselves as aggregators, partly following the separation between the BRP and BSP roles. It's a new market with great potential revenue leading to emerging actors looking to create an aggregator role. However, there are several key success factors in doing so and the suitability for different new actors diverges. OEM1 illustrated how this emerging market could turn out by stating the following: “I believe there will exist different types of aggregators focusing on different markets and end customers, some towards private customers, some towards corporations or housing associations, in order to create the right preconditions for the different markets and finally actors who aggregate towards a bigger portfolio”. 
+
+
+ES4 highlighted manufacturers of different products as suitable actors for aggregating such resources by expressing the following: “It could be a battery supplier, a heat pump manufacturer in the same theme that a car manufacturer can be an aggregator. Everyone who delivers some type of flex solution or resource could potentially also be an aggregator for that type of product.” This goes to show that OEM1’s justification for many potential actors' possibility to establish an aggregator role goes conjointly with ES4’s illustration of manufacturers' suitability of  aggregating their produced products.
+
+
+ES5 portrayed the current customer base of a company as a significant factor for becoming a profitable aggregator by illustrating the following: “An idea is to work actively towards your larger industrial customers, then you can potentially have greater aggregation volumes. Don’t you have that? Well, then it might be harder, especially if you have to process customers possessing full-scale contracts”. ES5’s statement also argues for Electricity Supplier’s suitability since they are the ones possessing the contracts with electricity customers as earlier stated by OEM2. 
+4.1.6 Suitability of an EV Manufacturer as an Aggregator
+In the majority of the interviews, respondents believed that car manufacturers have the potential to play a role as aggregators in the V2G value chain. However, respondent A4 expressed slight skepticism, stating, "I'm not sure if electric vehicle companies can be seen as aggregators in themselves. Maybe in the future, but there are quite a few steps that need to be fulfilled before the entire value chain can be realized".
+
+
+A pattern that emerged from all the interviews was that respondents agreed on two strengths of car manufacturers: technical expertise and a large customer base. ES5 articulated it as follows: "They have the technical know-how and they have the customer contacts". One aspect put forward by respondents was that car manufacturers have access to a lot of user data that can be leveraged when becoming an aggregator and OEM1 described it as follows: "We have direct contact with the car owner and can obtain data in a different way". Furthermore, ES6 highlighted that car manufacturers also can offer simplicity, stating, "The strength is, to some extent, this simplicity. You buy the car and you get the charging infrastructure, or whatever it is that you consider most important, included". 
+
+
+A topic that often arose was the expertise of the OEM when it came to warranty and the health of the car battery. OEM2 talked about how as a customer, one may prefer an actor with a good understanding of this to aggregate the car and expressed it as "Who do I trust the most to take care of my electric vehicle's battery? ... It may be the one who actually manufactured the car". To further elaborate, it is worth noting that a significant number of the respondents indicated that the OEMs potentially possess considerable bargaining power in this matter, and consequently, they can exert a significant influence on the evolution of the market. As an illustration, ES3 highlighted that car manufacturers have the potential to shape the market, as they hold the power to approve or disapprove new technologies or services. Specifically, ES3 said: “Then we have the car manufacturers who are not obliged to approve it [meaning discharging], but they might need to if they intend to maintain their warranties on the vehicle”.
+
+
+There are various ways in which a car manufacturer can assume a role in this value chain, and it is noteworthy that respondents have differing perspectives on how a car manufacturer could function as an aggregator. A4 explained that considering one of the strengths of car manufacturers is their technical expertise, it seems more plausible for them to act as a technical aggregator rather than an independent aggregator. Respondent A2 agreed with this and stated: "I think in my opinion, a lot of the mobility companies should become only a technical aggregator and not get into market aggregation.” What many of the respondents expressed was that a car manufacturer may not have the necessary knowledge about the electricity market to act as an independent aggregator, and instead should focus on their core business and/or consider partnerships. A1, A2, A4, and ES3 all highlighted that they currently have well-functioning partnerships that enable them to operate in the market. A2 provided an example of why partnerships are beneficial by stating, "It's good to have partners that can bring a lot of resources without our salespeople having to knock on every door", and further pointed out that a potential partnership between them and an OEM is a win-win as they can access a lot of resources, and the OEM can have a trusted partner to go to market with.
+4.1.7 Aggregators and EV Users
+The interviewees expressed varying views on the most important factors for EV users when adopting V2G technology. There were a number of factors commonly expressed as significant by several actors during the interviews. One of the frequently suggested factors concerns simplicity for the prosumers, specifically that it should be little to no burden for the EV user to adopt V2G. Several respondents from different sectors highlighted the same argument, one of which is ES4. "I think today's customers want complete solutions, yes, if I buy this, then I get this package."
+
+
+Several respondents suggested that EV users are insufficiently informed about the V2G concept as well as its impact on battery health for the car, which consequently was believed to create concerns among most EV users. OEM2 described this as two barriers: "One, to get customers to understand what it is" and continued with "To reassure customers that the battery will actually last." Several respondents agreed with this and believed there's an informational gap that needs to be bridged in order to increase EV users' willingness to adopt V2G.
+
+
+Several interviewees from all blocks emphasized that compensation is of high importance in getting EV users to connect. In order to outweigh the risks of degradation on the battery, lowered SoC when departing, and additional administrative work most respondents agreed that adequate compensation is a necessity. A4 explained that "You don't want anyone to be tinkering with the batteries so that you suddenly lose range or lose lifespan, and get less money when you sell it" and continued with "My sense of compensation would be that I would need quite a few hundred per month for it to be worth it."
+
+
+Another aspect that several respondents mentioned is the influence of brand and reputation. ES1 emphasized that "brand and trust are often linked, if you have managed your cards well, you have good trust". Generally, it is believed among the respondents that EV users place great emphasis on previous interactions with a company in other contexts, such as how well the electricity billing and customer support has been with an energy supplier, when choosing an aggregator.
+
+
+Lastly, there were several perceptions on which type of actor the EV user would primarily choose as an aggregator for their EV. However, it's interesting to note that there is no clear theme between the respondents of any block on this question, among the interviewees all possible aggregators listed are to some extent believed to be desired by EV users.
+4.2 Survey
+The survey resulted in 234 responses. In response to the question "Do you own, lease, or have access to an electric or hybrid vehicle today, and if so, how?", a majority of 55% indicated that they own an electric/hybrid vehicle, 27% lease privately, 20% have a company car, 7% do not have access to one, and 1% drive an electric/hybrid vehicle that they do not own themselves. The question was a multiple-choice question, which is why the percentages do not add up to 100%. The result from this question shows that more than 90% of the respondents in some way control an EV.
+
+
+  
+
+Figure X1. Survey results for the first question 
+
+
+In response to the question "Would you be interested in using V2G if you were compensated?", as illustrated in Figure X2 below, 70% answered “Yes”, 22% answered “No”, and 8% answered “Maybe”. 
+
+
+  
+
+Figure X2. Survey results for the third question
+
+
+In response to the question “Would you be interested in using V2G even if you did not receive any compensation?” 27% answered “Yes”, 45% answered “No” and 27% answered “Maybe” as illustrated in Figure X3 below. The previous question indicates that there is a high willingness to participate in V2G while being compensated, with only 8% of the respondents explicitly saying no. The willingness to participate drops without compensation, making compensation an important factor in V2G diffusion and a key aspect in competing for aggregation capacity. However, it is notable that the majority still doesn’t close the door to V2G even without compensation, as 55% answered “Yes” or “Maybe”, implying that a large share of the respondents are curious about V2G.
+
+
+  
+
+Figure X3. Survey results for fourth question
+
+
+Based on the results of the question "How would you prefer to be compensated for selling electricity/flexibility through V2G?", visualized in Figure X below, it can be deduced that "Lower electricity costs for your household", "Free or cheaper charging", and "Direct payout" are the dominant options. It is interesting to note that the two alternatives that affect the customer's electricity bill are the most popular and options that can be considered as financial compensation are the most favored. Concerning the battery, around 35% of the respondents prefer compensation through battery warranty or discounted battery replacements. Also over 15% would like feedback on the change of their environmental impact, which is the only non-monetary choice apart from “Other”.
+
+
+  
+
+Figure X3. Survey results for fifth question
+
+
+In the section of the survey where respondents were asked to rate the importance of various factors in their choice of aggregator, it was found that respondents ranked "Compensation" as only the fifth most important factor. Instead, respondents considered "Transparent terms", "Control over charging permits and hours of vehicle activity in V2G", and "Ease of use" to be the most important factors based on the mean score. However, it should be noted that the "Don't know" responses were not included in the mean score and since more respondents answered "Don't know" to "Transparent terms", this raises the mean score of the factor. As can be seen in Figures X, X, and X in Appendix 3, the results can be interpreted as indicating that "Control over charging permits and hours of vehicle activity in V2G" and "Ease of use" are the most important factors. One thing to note about the results is that the total mean score is 3.88 and the range is only 0.8, as can be seen in Figure X below, indicating that all factors are relatively equal in importance. Given that V2G is a new technology on an immature market, the low spread between the different aspects can be said to show that the respondents haven’t had much exposure to the service. Thus, they don’t surely know what to expect of the service, and how it should function, making the factors relatively equal.
+
+
+It is also noteworthy that 15% of respondents answered "Don't know" to "Type of grid support offered" illustrated in Figure X below. This could indicate some sort of insufficient knowledge among the EV owners concerning the differences between the various services that an aggregator can provide.
+
+
+Table X. Survey results for each of the aspects treated in the sixth question of the survey.
+Aspect
+	Average rating
+	Percentage that “Don’t know”
+	A. Control over charging permits and hours of vehicle activity in V2G
+	4.2
+	6%
+	B. Ease of use
+	4.2
+	3%
+	C. Transparent terms
+	4.2
+	9%
+	D. Compatibility with your other flexible resources (home batteries, solar panels, etc.)
+	4.1
+	6%
+	E. Compensation
+	4.0
+	3%
+	F. Customer support
+	3.9
+	7%
+	G. Easy installation
+	3.8
+	6%
+	H. Type of grid support offered (flexibility, balance, and arbitrage)
+	3.8
+	15%
+	I. Environmental impact
+	3.6
+	6%
+	J. Data privacy and security
+	3.5
+	7%
+	K. Reputation & Reviews
+	3.4
+	7%
+	Table X. Survey results for each of the aspects treated in the sixth question of the survey.
+
+
+  
+
+Figure Xx. Survey results for question six plotted with average as dotted line.
+
+
+In response to the last question "Which type of actor offering an aggregator service would you prefer to connect to?", as illustrated in Figure X below, the respondents clearly indicated that “Your electricity supplier” was the most attractive option with 34% of the responses. The third largest share regards to the “Electricity grid owner”, meaning that “Your electricity suppliers” and “Electricity grid owner” in total received almost 50% of the responses. Notable is that 18% of the respondents did not have a preference. Four categories received 10% or less of the responses, including “External partner” at 10% and “Your car manufacturer”, hence the OEM, at 7%.
+
+
+  
+
+Figure Xx. Survey results for seventh question.
+
+
+
+
+
+
+
+
+________________
+5 Discussion
+In this section, the aggregator role is discussed based on how it is portrayed in the theory compared to how it is perceived in the results and analysis. The themes identified in the previous chapter and the results from the survey are discussed in four chapters.
+5.1 The Aggregator Role  
+Few respondents were familiar with two of the subcategories of aggregators proposed by Färegård & Miletic (2021), market aggregator (MA) and technical aggregator (TA). This is not surprising, as categorization of different types of aggregators is rare in literature, and Färegård & Miletic constitutes one of very few, if any other, literature mentioning the MA and the TA. Some respondents mentioned TAs without being familiar with MAs, which can be explained by awareness of the technical aspect of V2G. Almost all respondents emphasized the need for the aggregator to possess the technical ability to aggregate and control vehicles. From this reasoning, technical aggregator becomes a natural term for an aggregator that practically focuses on solving the technical integration in order to provide its portfolio to another aggregator. The TA thus incorporates only one of the four dimensions of an aggregator defined by Sovacool et al. (2020).
+
+
+Färegård & Miletic (2021) explains the MA as aggregating TAs, creating a portfolio of assets. The result of the interviews shows that this is a reasonable approach, and the respondents depict the role of an MA to be the actor with market knowledge, competence to deaggregate the financial flow, and communicating with the other actors in the value chain. This is in line with the three dimensions left if TAs take on the technical dimensions defined by Sovacool et al. (2020), namely the business-related, regulatory, and societal dimensions.
+
+
+Most respondents were curious yet uncertain about the impact on the aggregator role following a potential separation of the BRP and the BSP role. As stated by Svk (2023e), the goal is to make it easier for more actors to provide balancing services by removing the need for taking the BRP-role or having a contract with a BRP. Some respondents showed skepticism about the formulation of the legislation and believed that the outcome of the separation will not allow for fully independent aggregators. This uncertainty affects the decision making among actors and may, as believed by a few respondents, slow down the development of the market for aggregators. When acting on a flexibility market however, as explained by the Flexibility Market Manager, the aggregator doesn’t have to have an agreement with a BRP, meaning that obtaining an independent role is partly possible.
+
+
+A result acquired from the interviews is the importance of the ability to audit the service rendered from each vehicle and compensating each user. This is in line with the perception of Noel et al. (2019), who state that transactions with different types of actors will be handled by the aggregator, while also communicating with the prosumers. The respondents expressed a complexity in handling a large number of small financial transactions. However, the result from the interview also shows that some actors, for example electricity suppliers, are already familiar with this financial mechanism.
+
+
+Expressed in the literature is the uncertainty about when car users will have their vehicles plugged in. Axsen et al. (2018) reasons that aggregators might not be able to deliver the promised capacity in time or during the whole promised period. The results from the interviews point to the primary solution being forecasting models, which can be used in order to make sure that the bid capacity at each moment is available. This perspective is also introduced by Sovacool et al. (2020), predictive algorithms can make aggregators stable market participants. An aspect of aggregators not mentioned in the literature, but emphasized in the results, is the ability to segment the prosumers. By segmenting prosumers, and focusing on the ones most available, a few respondents mean that an aggregator can maximize its pay-off. Also, this would benefit the most available prosumers as their own share of the revenues would increase, intending that segmentation of prosumers is beneficial both for aggregators and the prosumers with high availability. 
+5.2 V2G Aggregator Market Aspects
+In the theory, Noel. et al (2019) suggests that frequency regulation and flexibility markets are both potential candidates for a V2G aggregator. The frequency regulation market is considered particularly suitable due to its shorter duration times. Additionally,  Kocer et al. (2021) suggest energy arbitrage as another possible revenue stream for V2G aggregators. Though the interviewees agree on these as suitable markets, several additional aspects important to consider were discussed. Among these were market saturation, more specifically, how it will develop in the future. As expressed in 4.1.4, this aspect varies significantly between markets and one clear theme among the interviewees is that the frequency regulation markets are believed to eventually become saturated as more flexible resources are added. This implies that, since supply increases, profitability will decrease. This is why several interviewees believe that the margins of the frequency markets will decrease onwards and thus are currently the highest they will be. The interviewees bring up an opposing trend within the energy arbitrage market, which instead is expected to increase in value as spot prices are increasingly volatile. Even though Noel et al. (2019) suggests frequency balancing as the most suitable market for V2G as a technology, the results suggest it might not be the one with the highest value for a V2G aggregator.
+
+
+This implies that it is not as simple as frequency balancing being the best fit for V2G. Other factors, such as internal capabilities as well as saturation, profitability, and growth of other markets may be aspects more important to consider. However, Svenska kraftnät (2023a) made clear that entering most markets requires certain preconditions. Several interviewees highlight that such preconditions, for example trading licenses or contracts, may incur high costs initially. Since the markets have different requirements, it is clear that these requirements are an equally important aspect that should be properly addressed before entering a market. Examples of these differences are the different activation times of FCR-N and FCR-D as well as the fact that flexibility markets don't require any contact with a BRP. It is not necessarily easy to switch markets once entered, as one would likely miss out on the initial investments tied to satisfying market conditions, whether they are licenses, contracts or investments in capacity or knowledge. Thus, determining which internal capabilities are possessed and what markets are the most fitting becomes an important aspect to successfully become a V2G aggregator. 
+
+
+Frequency regulation is the only market respondents believed to be saturated. However, as the market is currently highly profitable, and as stated in section 4.1.4, predicted to attract a lot of additional capacity, it is difficult to analyze in its current state as the value is dependent on the available capacity. Contrarily, other markets are recently initialized and not mature enough. Market analysis can thereby become problematic in the current state of the markets. Additionally, Noel et al (2019) argue that the value of flexibility markets is somewhat subjective and largely dependent on the estimated value of possible savings on network infrastructure, which adds to these complications.
+5.3 V2G Network
+A future V2G value network illustrated by Noel et. al (2019) consists of three main actors; the EV user, aggregator and grid operators. However, the presented results display a more comprehensive and complex composition. The respondents implied a high uncertainty in what a future V2G value network could look like, especially following the separation of BRP and BSP. Furthermore, two different aggregator roles can be assumed, either being a technical aggregator (TA) or a market aggregator (MA), as illustrated by Färegård & Miletic (2021). In practice, and in line with the value chain presented by Noel et.al (2019), one actor could take on both these roles, however, results point towards a different configuration because of the electricity market’s complexity. As emphasized by multiple respondents, the need for some type of cooperation is necessary since no actor possesses the knowledge nor capacity to aggregate an entire market.
+
+
+Collaboration between different actors will therefore be central in order for a V2G value network to work sufficiently. Axsen et. al (2018) emphasized V2G’s problematic characteristic with unpredictable and fluctuating charging and discharging patterns which the respondents likewise highlighted. Also, the flexibility of different EV users varies, which was put forward during the interviews. Hence, in order for a V2G system to work in practice, there’s a need for communication between the EV user and potential aggregators to ensure that one can deliver the requested capacity. An aggregator needs to know when the battery can be discharged and to what extent. A majority of the respondents mentioned car manufacturers as suitable aggregators, partly because of this reason. The car manufacturer possesses user data and direct contact with the EV user which can lay the foundation for potential forecasts to ensure required capacities. However, the car manufacturers have no experience within frequency balancing or frequency regulation, nor do they have a financial mechanism to deaggregate revenues towards EV users unlike other actors like electricity suppliers.
+
+
+In order to allow EV’s to be a part of a V2G network, the car manufacturer will play an important role. Respondents in section 4.1.2 illustrated that car manufacturers not only can, but need to be a part of a V2G system since they are the ones permitting discharging the vehicle. According to the conducted survey, when EV users were asked, “How would you prefer to be compensated for selling electricity/flexibility through V2G?”battery warranty was the fourth most selected alternative. This indicates that battery degradation is a concern amongst EV users when it comes to V2G. The only actor who can ensure warranty of battery health is the car manufacturer.
+
+
+A V2G network with some involvement from car manufacturers seems plausible when all aspects are taken into consideration. As emphasized by Sovacool et al. (2020), an OEM can create new income streams by pursuing a role within a V2G network. Moreover, according to the respondents, a potential market makes room for different actors varying in size, the aggregator role can be acquired by many actors, including manufacturers who can aggregate their produced products. The respondents emphasize the need for more comprehensive aggregators who can bear the responsibility of bidding and offer collected resources. A future V2G value network could consist of a car manufacturer acquiring a TA role leveraging their technical knowledge and user data as well as the direct contact and battery warranty possibilities for the EV users. This allows for a MA, to offer a car manufacturer’s collected resources together with other flexible resources from different actors to the market. With such a configuration, all actors work close to their core business, doing what they know best. However, as pointed out in section 4.1.2, this means that one revenue stream will be shared among multiple actors, following the establishment of both a technical aggregator and a market aggregator, which leaves some doubt regarding such a system’s profitability.
+5.4 EV Users
+In terms of EV users' knowledge, there were some doubts and concerns among the interviewees that EV users were not sufficiently familiar with what V2G is in order to want to connect. A lack of insight into how the technology works is something Sommerset Busengdal et al. (2022) also suggest. It is interesting to note that in the survey, the respondents were able to answer all the questions with only a brief introductory description, and in addition to this expressed a relatively high interest in the solution. This indicates that there may be a difference in perception regarding EV users' knowledge of V2G between those who want to offer the solution and the users. It should be noted, however, that the survey was conducted among a group of respondents particularly interested in EVs who are presumed to be more aware of V2G than the average EV user. As such, the selection of respondents for the survey should be taken into consideration when evaluating the results.
+
+
+Regarding the factors prosumers consider important when connecting to V2G, the survey results indicate that simplicity and control over when they are connected to V2G is important. This is also one of the important aspects that were highlighted in the interviews, where the respondents claimed that a comprehensive solution would be preferable, and that control over SoC is important, as stated in Section 4.1.7. These results were expected since both Sommerset Busengdal et al. (2022) and Ghotge et al. (2022) argue that uncomplicated usage and control of charging sessions is important for prosumers. This can also be linked to EV users experiencing "range anxiety" and considering minimum range as important (Geske and Schumann, 2018). Furthermore, Ghotge et al. mention that EV users are focused on setting minimal range and SoC rather than actively managing the charging process themselves, indicating that this is something a future aggregator should take into consideration when designing their solution. 
+
+
+Sommerset Busengdal et al. (2022) also suggest that transparency is an important factor, although this was not an aspect considered by the interview respondents. However, the survey results indicate that transparent terms are considered one of the more important factors. Although a wide aspect, a potential aggregator should be transparent with what is expected of the prosumer, both in terms of how compensation is made and when and how much control the prosumer has over charging. 
+
+
+There are differing opinions in the literature on the importance of compensation. Ghotge et al. (2022) argue that it is of utmost importance, while Geske & Schumann (2018) suggest that high adoption can occur without compensation. Interview respondents indicated that compensation is crucial, but also noted that the type of compensation offered is important. From the survey results in Section 4.2, on the one hand, we can see that the willingness to participate in V2G decreases from 70% who say yes with compensation to only 27% who say yes without compensation (see Figure X and X). On the other hand, it is still more than 50% who either respond yes or maybe when compensation is not offered. This suggests that compensation can be seen as an important aspect, but it also does not contradict the notion that high adoption rates can be achieved without compensation.
+
+
+Langenhuizen et al. (2022) mention three different types of prosumers: financially, environmentally, and socially motivated ones. This raises the question of how prosumers want to be compensated. Based on the survey results, it can be said that financial compensation is the clearly dominant option. Some respondents could also consider environmental feedback as "compensation," with 15% of respondents choosing this option. One option that stands out is "battery warranty or discounted battery replacements," which around 35% could consider as compensation. The battery is also mentioned in the interviews as an important aspect that prosumers may currently lack information about. Furthermore, the health of the battery is something that Ghotge et al. (2022) argue is important for prosumers to be informed about and compensated for in a V2G solution. 
+
+
+Sovacool et al. (2020) mentioned electricity suppliers and providers of charging stations as examples of actors that can take on an aggregator role. The interviews also revealed that other actors such as OEMs and startups also are potential players in this market. Furthermore, the survey results indicate that prosumers seem to want their electricity supplier to be their aggregator. Together with electricity grid owners, these two actors make up about 50% of the responses, indicating that prosumers see actors in the electricity sector as attractive players in this market. Although the interviewees bring up OEMs and startups, very few prosumers actually find these actors interesting as players as 10% or less chose these options in the survey. However, many respond that they have no preference, which may indicate that marketing and a compelling value proposition can play a big role in acquiring prosumers. The marketing and value proposition should then be tied to the factors that prosumers consider important and have been discussed earlier in this chapter.
+________________
+6 Managerial Implications
+The research findings are in the following chapter placed within the context of the real world to facilitate an understanding of the actions required for OEMs to position themselves as key players in the evolving V2G landscape. With insights into how OEMs can assess and adopt a V2G aggregator role, potential challenges and opportunities can be identified. Both the technical and the independent aggregator roles are discussed.
+6.1 OEM as Technical Aggregator
+The findings indicate that the role of a TA may be appropriate for an OEM. This is due to an OEM having technical expertise in EVs and batteries, as well as a large customer base. However, there are limitations as to what can be done with these two abilities, and to be able to fully assume the role of a TA, the OEM must develop a strategy for how to enter the V2G market as a TA.
+
+
+A first step is identifying the most important activities necessary to offer the aggregator service. As a technical aggregator, such activities include data collection and analysis to create precise forecasts, energy management to control the charging and discharging of the vehicles, and aggregating software to be able to communicate with and coordinate the EVs on a larger scale. The OEM has to maintain communication with both the prosumers and MAs and stay informed about the regulatory framework and policies related to V2G operations. Adherence to cybersecurity and interoperability regulations is particularly critical in an emerging market like V2G, where regulatory changes are expected as the necessary infrastructure and standards continue to develop.
+
+
+To generate value from these activities, appropriate resources must be leveraged. The type and amount of resources necessary will differ based on what the OEM is looking to outsource. A team of experts with a deep understanding of V2G technology are needed to develop, design, and maintain the aggregating software and ensure its integration with the grid and EVs, as well as large amounts of data to create the necessary predictions. Furthermore, the OEM will need to focus on customer engagement and demonstrating a successful pilot project to validate the aggregator solution and identify potential challenges.
+
+
+Once key resources and activities have been determined, the OEM should set up strategic partnerships with key stakeholders in the V2G value chain. Based on the results, the partnerships should include a market aggregator, vehicle users, prosumers, and organizations with technical capabilities that the OEM lacks and won’t develop in-house. The OEM may also need to look into relationships with grid operators to understand the requirements of the different markets and be allowed to act on them. However, the actual agreements with these parties will be through the market aggregator.
+
+
+Segmenting prosumers is key when developing the business model for the technical aggregator. Prosumers can be segmented in several ways, but for an OEM a reasonable preliminary segmentation is through vehicle brand, as the OEM most likely will only aggregate its own vehicles. Secondly, prosumers should, according to the findings, be segmented based on flexibility to maximize profitability. A prosumer with a fixed schedule and a vehicle that is rarely unplugged is very flexible, while a prosumer with a shifting schedule and a vehicle that is often on the road can’t offer as much flexibility. By analyzing energy usage patterns, battery capacity, SoC, mobility patterns, and flexibility preference, an understanding can be built of how much flexibility each prosumer can offer. Furthermore, segmentation should be done based on geographical location, living situation, and customer engagement to be able to correctly assess what can be offered and to whom.
+
+
+The finances of a TA will differ greatly depending on what they choose to outsource, and which markets they choose to be active in. However, as a general rule, there will be an initial investment associated with setting up the aggregating software and building the predictive models. There may also be some licensing costs for the platform the software will be run on as well as the up-front costs of developing the right competence through new hires, workshops, and professional development initiatives. Recurring costs such as maintenance of the systems, customer support, sales, and marketing will need to be accounted for as well. There will also be payments or some form of compensation to the MA and the prosumers. 
+
+
+The revenue streams will mainly come from selling capacity and energy from the aggregated vehicles. However, since the TA isn’t directly active on any market, it will have to choose MAs that are active in the markets the technical aggregator finds interesting. This could be local flexibility markets, national frequency markets, or the wholesale market. Depending on which market the TA’s capacity is sold to, the remuneration may look different. This will need to be further analyzed to fully understand the potential in each market.
+
+
+The OEM needs to understand what the value proposition of offering a TA service will be. Depending on which customers the OEM is focused on, this will vary. For the MA, the OEM is offering a share of the earnings from the aggregation in order to participate in the market aggregator’s portfolio. The incentives offered should include some type of battery warranty or battery exchange to account for the additional damage caused to the battery when participating in V2G. Guaranteeing battery health is one of the biggest advantages an OEM has as an aggregator, as they are the ones ultimately responsible for offering a functional vehicle. How V2G should be offered to prosumers may differ, but it could be offering V2G as a subscription service, or deaggregating a share of the earnings from being active on the energy markets. However this looks, the incentives will be a major factor in differentiating the aggregators from one another, and are therefore an important step in winning market shares.
+
+
+This thesis has focused on private ownership of vehicles, but the EV owner and EV user may not always be the same. This could be the case in fleets or work vehicles. The strategy and business model may differ between aggregating privately owned vehicles and vehicles that are leased, and it’s important that the OEM considers this when entering the V2G aggregation space.
+6.2 OEM as Independent Aggregator
+The findings indicate that it is currently possible for an OEM to become an independent aggregator on both the flexibility market and for energy arbitrage. In the future, it might also be possible to assume this role in the frequency balancing market but this is entirely contingent on the separation of the BSP role from the BRP role. The independent aggregator role differs from the technical aggregator role mainly in the market side of the business model.
+
+
+Key activities for an IA, besides the technical aspects, are market participation, risk management, and demand forecasting. An IA is ultimately the one responsible for bidding the correct amount of energy and capacity and following through on that bid which is why risk management is an important aspect to consider. To take on these activities, the aggregator must focus on gaining expertise in the energy markets they want to be active on and understanding statistical probability to minimize the risks of not being able to follow through on a bid. The IA will need to build relationships with grid operators and possibly a BRP depending on what the landscape looks like after the separation of the roles. In order to comply with the regulations of the different markets, partnerships need to be established with the administrators of the three markets as well as the regulators. This equates to TSO for the balancing market, the DSOs for flexibility markets, and the market operator for energy arbitrage on wholesale markets.
+
+
+An IA supplies directly to the BRP and Svk. An OEM launching an aggregator service would need to develop a multi-sided platform, bidding on electricity markets, and deaggregating the earnings to the prosumers. For the OEM to offer the right customer support, it needs to segment its customers. These can be split into prosumers and resource buyers, the resource buyers being grid operators and market administrators. The prosumers require, as previously stated, a simple user interface and education on how they are affected by V2G. The OEM will need to have constant communication with grid operators regarding bidding.
+
+
+As an IA would assume control over the entire aggregation, including trading on the market, the value proposition expands. The OEM can therefore supply a complete ancillary service as opposed to providing a portfolio of resources. This vertical integration means that the OEM would likely get paid more for the ancillary services since no middleman is required. However, assuming the role of an IA requires additional investment compared to a technical aggregator as trading resources have to be developed.
+
+
+The solution provides a reliable and flexible energy storage system to serve different energy systems while offering an additional revenue stream for the OEM and EV owners. The key challenges for the OEM are to secure partnerships with energy companies and utilities, develop a trading strategy for the electricity arbitrage market, and manage the regulatory compliance requirements. Overall, the analysis demonstrates the potential for OEMs to play a significant role in the development of V2G solutions.
+
+
+________________
+7 Conclusion 
+The role of the aggregator in the V2G value chain is wide yet fairly well defined, and can be divided into subcategories. The TA is referred to by multiple respondents, mostly due to its natural and practical role in enabling V2G. MA constitutes an aggregator of TAs and has the market knowledge and competence to deaggregate the financial flow and communicate with other actors in the value chain. By creating a new role in the energy markets, the BSP role, the goal of Svk is to make it easier for more actors to provide balancing services. Independent aggregators of EVs providing balancing services could be an example of a BSP. Multiple respondents were however uncertain if the outcome of the separation of the BRP and BSP roles would be fully independent aggregators.
+
+
+To become a stable market participant, both respondents and literature identify that aggregators need forecasting methods of their EVs availability. Using precise forecasting, aggregators reduce the risk of not being able to deliver the promised capacity. Another aspect, brought up by a few respondents, is the ability to segment EV users based on the availability of their vehicle. Creating a portfolio of vehicles with high availability would benefit both aggregators and the EV users.
+
+
+Another important aspect for a V2G aggregator concerns the markets in which they sell their aggregated capacity. Since the V2G markets differ in both size and requirements on capabilities and knowledge, there is great value for each aggregator to identify the most suitable one based on their aggregated capacity and abilities. A well-founded decision can result in a greater chance of successful market entry and increased profitability onwards, while a poorly founded decision can result in a mismatch between competencies and market requirements. This could further imply that the aggregator needs to expand its abilities or has knowledge that is not fully utilized. That being said, many markets are currently not mature and it can therefore be difficult to analyze which is most suitable for an aggregator in the future. V2G is currently in an early stage where it is primarily driven through pilot projects, and as V2G further develops and the total available aggregated capacity in society increases, the markets will likely mature. 
+
+
+The future V2G network is expected to involve at least three main actors, namely the EV user, aggregator, and grid operators, but it may become more complex due to uncertainties surrounding the separation of BRP and BSP, as well as the different aggregator roles. However, it is evident that collaborations among the actors will be crucial for the V2G network to operate efficiently since none of them possess the necessary knowledge or capacity to perform the aggregation task independently. V2G is a challenging technology due to the unpredictable and fluctuating charging and discharging patterns of EVs, as well as the varying flexibility of different EV users. Therefore, communication between EV users and aggregators is necessary to ensure the delivery of the required capacity. Car manufacturers play a vital role in this network since they possess user data, direct customer contact, and battery warranty control, which can be utilized to assume the position of a technical aggregator.
+
+
+It is important for V2G aggregators to understand what factors EV users consider important when choosing an aggregator service. Three main factors that are important to EV users are ease of use, control over SoC and transparency. Compensation has also been discussed as an important factor, and this study supports previous research suggesting its significance but there is still interest in the technology without compensation. Most likely, compensation will play a significant role for the average user, and a future aggregator will need to consider how to properly compensate prosumers. The study provides an indication of the type of compensation that is most attractive, including lower electricity costs, cheaper charging, and direct payment. The results suggest that users prefer future aggregators to be an actor in the electricity sector. However, a significant proportion of users have no preference regarding which company takes on the aggregator role, indicating that marketing and a compelling value proposition can play an important role in acquiring prosumers.
+
+
+Lastly, the thesis highlights the managerial implications for OEMs considering the role of a V2G aggregator. Important aspects noted are the need for strategic planning, resource leveraging, and partnerships. Adopting the role of a technical aggregator requires skills in data analysis, energy management, and software coordination, and strategic partnerships with stakeholders are crucial. The role of the independent aggregator requires more market knowledge and regulatory compliance but could also increase profitability as fewer parties are involved in the value chain. Overall, OEMs can broaden its value proposition, unlock revenue streams, and address market demands by assuming the aggregator role.
+
+
+In this thesis, the aggregator role of an OEM has been explored, with a focus on the Swedish market and the aggregation of private vehicles. There are several business cases for an OEM assume the aggregator role, such as selling V2G compatibility at a higher price or as a subscription, and it would be interesting to try to find the most profitable and most easily leveraged business case. To fully understand the business cases, further examination of the role is needed, especially considering other ownership structures, like EV fleets, to create distinctions of how an aggregator has to differentiate between owner types. Exploring how much of the V2G value can be captured using smart charging would be another interesting study, as smart charging doesn’t need bidirectional chargers or V2G compatible cars, making the investment for the EV owner smaller.
+
+
+
+
+________________
+
+
+References
+Ahmadiahangar, R. Azizi, A., Palu, I., & Rosin, A. (2020). Demand-side Flexibility
+in Smart Grid. Springer.
+https://doi.org/10.1007/978-981-15-4627-3 
+
+
+Ahmed, A., & Etherden, N. (2021, September). The potential for balancing the Swedish power grid with residential home batteries. In CIRED 2021-The 26th International Conference and Exhibition on Electricity Distribution (Vol. 2021, pp. 2104-2108). IET.
+https://www.ho-cired.hr/images/pdf/Najbolji-radovi/0713.pdf
+
+Axsen, J., Bailey, J. E., Castro, M. S., & HSU, D. (2018). Unpredictability and the importance of granularity for analyzing vehicle-to-grid integration. Environmental Research Letters. 10.1088/1748-9326/aa9c6d
+Bhakar, R., Kushwaha, P., Prakash, V., & R. Yaragatti, U. (2022). Synthetic inertia and frequency support assessment from renewable plants in low carbon grids. Electric Power Systems Research, 209, 107977.
+https://doi.org/10.1016/j.epsr.2022.107977   
+Blomqvist, P., & Hallin, A. (2014). Metod för teknologer. Studentlitteratur.
+Cassell, C. (2015). Conducting Research Interviews for Business and Management Students. SAGE Publications. 
+Chalmers University of Technology (2023). PEPP – Public EV Power Pilots. 
+https://www.lindholmen.se/sv/projekt/pepp-public-ev-power-pilots 
+Chesbrough, H., & Rosenbloom, R. S. (2002). The role of the business model in capturing value from innovation: evidence from Xerox Corporation’s technology spin-off companies. Industrial & Corporate Change, 11(3), 529–555. https://doi.org/10.1093/icc/11.3.529
+Drommi, C. (2022). The local potential of V2G. [Master’s thesis, Kungliga Tekniska Högskolan]. DiVA.
+https://www.diva-portal.org/smash/get/diva2:1678466/FULLTEXT01.pdf 
+Etherden, N., Ruwaida, Y., & Hansson, K., (2022). Final Report of the Swedish Demonstration: Ten key abilities for DSO’s to unlock flexibility. (GA 824414) Coordinet. https://www.vattenfalleldistribution.se/globalassets/nya-dso/var-verksamhet/projekt/coordinet-oct-2022/coordinet_wp4_d4.7.2_final-report-of-the-swedish-coordinet-demostration_v.1.0_22.09.2022.pdf 
+Elbilsstatistik. (2023). Elbilsstatistik. https://www.elbilsstatistik.se/elbilsstatistik 
+Energiföretagen., Oberoende Elhandlare., & Svenska kraftnät. (2022). Svensk Elmarknadshandbok (22B). 
+https://elmarknadshandboken.se/Dokumentation/Texter/NEMHB.pdf 
+Energimarknadsinspektionen. (2023). Effekttariffer. https://ei.se/bransch/reglering-av-natverksamhet/reglering---elnatsverksamhet/effekttariffer 
+Energimarknadsinspektionen. (2020). Kapacitetsutmaningen i elnäten (Ei R2020:06).
+https://ei.se/download/18.5b0e2a2a176843ef8f56cb0a/1611643287162/Kapacitetsutmaningen-i-eln%C3%A4ten-Ei-R2020-06.pdf 
+Energimarknadsinspektionen. (2017). Measures to increase demand side flexibility in the Swedish electricity system (Ei R2017:10).
+https://www.ei.se/download/18.5b0e2a2a176843ef8f582/1608542148119/Measures-to-increase-demand-side-flexibility-in-the-Swedish-electricity-system-Ei-R2017-10.pdf 
+Färegård, S. & Miletic, M. (2021). A Swedish Perspective on Aggregators and Local Flexibility Markets. http://kth.diva-portal.org/smash/get/diva2:1586195/FULLTEXT01.pdf
+G. Dorrel, D., & Mkhize, S. (2019). Practical Limitations of Vehicle to Grid (V2G) Infrastructure [Paper Presentation]. 2019 IEEE International Conference on Industrial Technology (ICIT), Melbourne, Australia.
+https://doi.org/10.1109/ICIT.2019.8754965 
+Geske, J., & Schumann, D. (2018). Willing to participate in vehicle-to-grid (V2G)? Why not! Energy Policy, 120, 392–401. doi:10.1016/j.enpol.2018.05.004 
+Ghotge, R., Nijssen, K. P., Annema, J. A., & Lukszo, Z. (2022). Use before You Choose: What Do EV Drivers Think about V2G after Experiencing It? Energies, 15(13). doi:10.3390/en15134907
+
+
+Gibe J,. Kalling, T. (2019). Business Models and Strategy. Studentlitteratur.
+Göteborg Energi. (n.d. a). Så funkar svenska elnätet
+https://www.goteborgenergi.se/om-oss/vad-vi-gor/vart-energisystem/sa-funkar-elnatet#:~:text=G%C3%B6teborgs%20eln%C3%A4t%20%C3%A4gs%20av%20G%C3%B6teborgs,du%20l%C3%A4sa%20mer%20om%20eln%C3%A4tet. 
+Göteborg Energi. (n.d. b). Effekthandel Väst.
+https://www.goteborgenergi.se/foretag/vara-nat/elnat/effekthandel-vast 
+Göteborg Stad. (n.d). Göteborg stad energiplan 2022-2030. https://goteborg.se/wps/wcm/connect/a8ae3fa4-e6b6-4dd6-ba84-2b52e0751af2/G%C3%B6teborgs+Stads+energiplan+2022-2030%2C+tillg%C3%A4nglighetsanpassad+och+n%C3%A4mndgodk%C3%A4nd.pdf?MOD=AJPERES
+Igogo, T., Sandor, D., Mayyas, A., & Engel-Cox, J. (2019). Supply chain of raw materials used in the manufacturing of light-duty vehicle lithium-ion batteries. (TP-6A20-73374). NREL.
+https://www.nrel.gov/docs/fy19osti/73374.pdf 
+Jaman, S., Verbrugge, B., Garcia, O. H., Abdel-Monem, M., Oliver, B., Geury, T., & Hegazy, O. (2022). Development and Validation of V2G Technology for Electric Vehicle Chargers Using Combo CCS Type 2 Connector Standards. Energies, 15(19), 7364.
+https://doi.org/10.3390/en15197364 
+Kempton W., Letendre S.E. (1997). Electric vehicles as a new power source for electric utilities. Transportation Research Part D: Transport and Environment, 2(3), 157–175. https://doi.org/10.1016/S1361-9209(97)00001-1 
+Kieckhäfer, K., S. Sodhi, M., S. Spengler, T., & Thies, D. (2019). Assessment of social sustainability hotspots in the supply chain of lithium-ion batteries. Procedia CIRP (80), 292-297.
+https://doi.org/10.1016/j.procir.2018.12.009  
+Kocer, B., Turkyilmaz, I., & Poyrazoglu, G. (2021, October). Optimal vehicle-to-grid controller for energy arbitrage and frequency regulation markets. In 2021 3rd Global Power, Energy and Communication Conference (GPECOM) (pp. 40-43). IEEE.
+https://doi.org/10.1109/GPECOM52585.2021.9587714 
+Kungliga IngenjörsVetenskapsAkademien. (2016). Svängmassa i elsystemet.
+https://www.iva.se/globalassets/rapporter/vagval-el/201606-iva-vagvalel-svangmassa-c.pdf 
+Kungliga IngenjörsVetenskapsAkademien. (2019). Så klarar det svenska energisystemet klimatmålen. (Vägval för klimatet 4) https://www.iva.se/globalassets/bilder/projekt/vagval-klimat/201909-iva-vagval-for-klimatet-delrapport4-i.pdf 
+Langenhuizen, S., van Sambeek, H., Zweistra, M., van der Wilt, Z., & Christiaens, W. (2022). Stakeholder analysis report. SCALE. https://scale-horizon.eu/publications/
+Liikamaa, R. (2019). Electric power distribution in Sweden. RISE. 
+https://www.ri.se/sites/default/files/2021-11/Power%20Distribution%20SE.pdf 
+Liu, R., Wang, Y., Wang, X., & Zhao, H. (2021). Distribution System Congestion Management Based on Local Flexibility Market [Paper Presentation]. 2021 6th Asia Conference on Power and Electrical Engineering (ACPEE), Chongqing, China.
+https://doi.org/10.1109/ACPEE51499.2021.9436988 
+Nodes. (2022). Sammanfattning av operationella regler som gäller för Effekthandel Väst vintern 2022-23. 
+https://www.goteborgenergi.se/Files/Webb20/BILDER/Bilder%20som%20INTE%20finns%20i%20GE%e2%80%99s%20bildbank/Regler%20Effekthandel%20V%c3%a4st%20sammanfattning%202022-23.pdf?TS=638036708042476664 
+Noel, L., K. Sovacool, B., Zarazua de Rubens, G., & Kester, J. (2019). Vehicle-to-Grid, A sociotechnical transition beyond electric mobility. Palgrave Macmillan. https://doi.org/10.1007/978-3-030-04864-8 
+Nymoen, H. (2022. Jun 14). "Regulatory issues still stand in the way of the roll-out of bidirectional charging". Ener|gate messenger. https://www.energate-messenger.com/news/223050/-regulatory-issues-still-stand-in-the-way-of-the-roll-out-of-bidirectional-charging-
+Osterwalder, A., Pigneur, Y., & Clark, T. (2010). Business model generation a handbook for visionaries, game changers, and challengers
+Osterwalder, A., Pigneur, Y., Bernarda, G., Smith, A., & Papadakos, T. (2014). Value Proposition Design : How to Create Products and Services Customers Want (1st ed.). John Wiley & Sons, Incorporated.
+Regeringen. (2022). Sverige antar internationella deklarationer för elektrifiering av transporter.
+https://www.regeringen.se/pressmeddelanden/2022/11/sverige-antar-internationella-deklarationer-for-elektrifiering-av-transporter/ 
+Richardson, James E., (2005). The Business Model: An Integrative Framework for Strategy Execution. Available at SSRN: https://ssrn.com/abstract=932998
+Ritzer, G., Dean, P., Jurgenson, N.(2012). The Coming of Age of the Prosumer. Sage. https://www.doi.org/10.1177/0002764211429368 
+SCB. (2023). Fordon.
+https://scb.se/hitta-statistik/statistik-efter-amne/transporter-och-kommunikationer/vagtrafik/fordon/ 
+Sharma, N., Smeets, B., & Tryggestad, C. The decoupling of GDP and energy growth: A CEO guide. McKinsey & Company.  https://www.mckinsey.com/industries/electric-power-and-natural-gas/our-insights/the-decoupling-of-gdp-and-energy-growth-a-ceo-guide
+
+
+Sommerset Busengdal, H., Lorentzen, E., & Zweistra, M. (2022). Report on consumer behavior. SCALE. https://scale-horizon.eu/publications/
+Sovacool, B. K., Kester, J., Noel, L., & de Rubens, G. Z. (2020). Actors, business models, and innovation activity systems for vehicle-to-grid (V2G) technology: A comprehensive review. Renewable and Sustainable Energy Reviews, 131, 109963.
+https://doi.org/10.1016/j.rser.2020.109963 
+Stockholms Handelskammare. (2020). Elbilar på frammarsch.
+https://stockholmshandelskammare.se/sites/default/files/2021-04/Rapport_Elbilar%20%281%29.pdf 
+Svenska kraftnät. (2021a). Balansering av kraftsystemet. https://www.svk.se/om-kraftsystemet/om-systemansvaret/balansering-av-kraftsystemet/ 
+Svenska kraftnät. (2021b). Lokala flexibilitetsmarknader.
+https://www.svk.se/utveckling-av-kraftsystemet/systemansvar--elmarknad/lokala-flexibilitetsmarknader/
+Svenska kraftnät. (2021c). Map of the national grid.
+https://www.svk.se/en/national-grid/map-of-the-national-grid/ 
+Svenska kraftnät. (2022). Sveriges elnät.
+https://www.svk.se/om-kraftsystemet/oversikt-av-kraftsystemet/sveriges-elnat/ 
+Svenska kraftnät. (2023a). Balansansvarig. (e)
+https://www.svk.se/aktorsportalen/balansansvarig/  
+
+Svenska kraftnät. (2023b). Frekvenshållningsreserv normaldrift (FCR-N). (a)
+FCR-N | Svenska kraftnät (svk.se)
+
+
+Svenska kraftnät. (2023c). Frekvenshållningsreserv störning uppreglering (FCR-D upp). FCR-D upp | Svenska kraftnät (svk.se) (b)
+Svenska kraftnät. (2023d). Frekvenshållningsreserv störning nedreglering (FCR-D ned). FCR-D ned | Svenska kraftnät (svk.se) ©
+Svenska kraftnät. (2023e). Guidance on the provision of reserves. https://www.svk.se/siteassets/english/stakeholder-portal/provision-of-ancillary-services/prequalification/guidance-on-the-provision-of-reserves.pdf (d)
+Tucker, N., & Alizadeh, M. (2022). A Deployable Online Optimization Framework for EV Smart Charging with Real-World Test Cases. 2022 IEEE International Conference on Communications, Control, and Computing Technologies for Smart Grids (SmartGridComm), Communications, Control, and Computing Technologies for Smart Grids (SmartGridComm), 2022 IEEE International Conference On, 172–178. https://doi.org/10.1109/SmartGridComm52983.2022.9961029 
+United Nations [UN]. (n.d a). 7 Affordable and clean energy. https://www.globalgoals.org/goals/7-affordable-and-clean-energy/
+United Nations [UN]. (n.d b). 8 Decent work and economic growth. https://www.globalgoals.org/goals/8-decent-work-and-economic-growth/
+Vattenfall Eldistribution. (n.d). Kapacitet och flexibilitet på elnätet.
+https://www.vattenfalleldistribution.se/om-elnatet/kapacitet/
+Visaria, A. A., Jensen, A. F., Thorhauge, M., & Mabit, S. E. (2022). User preferences for EV charging, pricing schemes, and charging infrastructure. Transportation Research Part A: Policy and Practice, 165, 120–143. doi:10.1016/j.tra.2022.08.013
+Vranken, T. (2021). Critical raw materials in Li-ion batteries.
+https://www.innoenergy.com/uploads/2023/01/critical-raw-materials-in-li-ion-batteries.pdf 
+Zecchino, A., Thingvad, A., Andersen, P. B., & Marinelli, M. (2019). Test and modelling of commercial V2G CHAdeMO chargers to assess the suitability for grid services. World Electric Vehicle Journal, 10(2), 21.
+https://doi.org/10.3390/wevj10020021 
+Wallén, G. (2008). Vetenskapsteori och forskningsmetodik (2. Uppl., Vol. 13) . Studentlitteratur.
+________________
+Appendix 1. Sustainable Development and Ethics
+Sweden is well-positioned for an up-scaling of climate-neutral energy sources because of good basic conditions such as water resources, a long coast with favorable wind conditions and access to biomass (IVA, 2019). However, sources of renewable energy are volatile due to changes in weather conditions. Further fluctuation can be seen on the demand side of the electric grid resulting in a comprehensive variation in both demand and supply. When there is a shortage of renewable energy, for instance when wind diminishes or there is a lack of solar production, the compensation in electricity are most often made from less sustainable sources, such as fossil- and nuclear power plants (IVA, 2019). 
+
+
+By using stored energy from alternative sources, such as EVs, the instability of the grid can be mitigated, ultimately improving the stability and efficiency of the grid. V2G technology can be an important component in accomplishing many of the global sustainable development goals formulated during the UN's Agenda 2030. The technology can be associated with the following five goals:
+
+
+* Goal 7: Affordable and clean energy
+* Goal 8: Decent work and economic growth
+* Goal 9: Industry innovation and infrastructure
+* Goal 11: Sustainable cities and communities
+* Goal 12: Responsible consumption and production
+
+
+Affordable and clean energy refers to renewable energy and minimizing the reliance on fossil fuels (United Nations [UN], n.d a). The Swedish Government (2017) suggest that V2G can help stabilize the electricity grid with an increasing share of renewables. Thus, V2G can allow for an  up-scaling of renewable, yet more volatile, energy sources and by doing so, contribute to making clean energy affordable and available for a larger share of the population.
+
+
+In the coming 20 years, the global labor force is said to increase by 800 million people (UN, n.d b). To sustain the advancement of labor, economic growth is of great importance. Economic growth and energy demand are related in many instances, such as when constrained energy supply restrains GDP growth (Sharma et al., 2019). To enhance and allow economic growth, vacant energy is needed in abundant quantities.
+
+
+V2G as an innovation extends the utilization of EVs to more than just transportation. The technology has the potential to make the vehicle industry more sustainable while promoting energy efficiency. Implementing V2G can help reduce grid infrastructure upgrades by reducing the highest level of momentary demand spikes. This will have both environmental and economical effects on cities and communities as investments will be spread out, as opposed to a lump sum, and thus also delay the need for materials. By doing so, more responsible consumption and production can be achieved.
+ 
+Lithium-ion batteries are one of the key components for EVs and consequently for V2G technology. Such batteries consist of critical raw materials (CRMs) such as lithium, cobalt, nickel, manganese, and graphite (Igogo et al., 2019). As explained by Vranken (2021), the biggest supplier of CRMs to the EU are numerous developing countries including South Africa, Democratic Republic of the Congo and Guinea. Kieckhäfer et al. (2019) highlights social impacts associated with different supply chain configurations of lithium-ion battery production. Specifically, child labor, the risk of corruption, the risk of occupational toxics and hazards, and the risk of poverty. Whilst an increased global fleet of EVs, utilized for V2G, could contribute in achieving the global goals, there’s also a high risk of contradiction where the supply chain could cause harm to countries where the raw materials are extracted. 
+
+
+________________
+
+
+
+
+Appendix 2. Survey
+
+
+Vehicle-to-Grid (V2G) och aggregatorer
+
+
+
+
+SIDA 1/2
+
+
+V2G - Förklaring
+
+
+V2G står för "Vehicle to Grid" och är en teknologi som gör det möjligt att skicka tillbaka energi till elnätet från batteriet i en elbil. Med V2G-tekniken kan bilens batteri genom smart multiriktad laddning nyttjas för att laddas och urladdas baserat på olika signaler, såsom elpris eller effekt- och energibehov i nätet. I de flesta fall kommer V2G möjliggöras genom en aggregator som kan sköta laddning, urladdning och betalning. Du som kund blir kompenserad för att göra din bil tillgänglig och för den el eller flexibla laddning som säljs, vilket också innebär att du förlorar en del av din flexibilitet och kontroll över bilens laddningsnivå.
+
+
+Aggregatorer i en V2G-lösning - Förklaring
+
+
+En aggregator kopplar samman flera energikällor, såsom batterierna i elbilar eller solpaneler, och skapar en större gemensam energiförsörjning. Detta gör det möjligt för privata ägare av sådana enheter att delta på marknaden för flexibilitet och stabilitet, vilket kräver större mängd energi/kraft än vad ett enskilt hushåll kan tillhandahålla.
+
+
+Observera att aggregatorer kan aggregera andra källor och inte bara elbilar, vilket kan vara viktigt att överväga om du har andra enheter som potentiellt kan aggregeras när du väljer en aggregator-tjänst.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* Anger obligatorisk fråga
+  
+
+
+
+
+
+1. Äger du, leasar eller genom något annat sätt har tillgång till en elbil eller hybridbil * idag, och i så fall hur?
+
+
+Markera alla som gäller.
+  
+
+
+
+Jag äger en elbil/hybridbil
+  
+
+
+
+Jag privatleasar en elbil/hybridbil
+  
+
+
+
+Jag har en elbil/hybridbil som tjänstebil
+  
+
+
+
+Jag kör en elbil/hybridbil som inte ägs/leasas av mig
+  
+
+
+
+Jag vill i framtiden köra elbil/hybridbil
+  
+
+
+
+Jag är inte intresserad av elbil/hybridbil
+  
+
+
+
+Övrigt:
+  
+
+
+
+
+
+
+
+2.
+	Vilket/vilka bilmärke(n) äger/leasar/kör du? Om du inte har en, vilket/vilka
+	*
+	
+
+	bilmärke(n) skulle du kunna tänka dig att äga/leasa/köra?
+
+
+	
+
+	Markera alla som gäller.
+  
+
+
+
+Audi
+  
+
+
+
+BMW
+  
+
+
+
+BYD
+  
+
+
+
+Fiat
+  
+
+
+
+Ford
+  
+
+
+
+Honda
+  
+
+
+
+Hyundai
+  
+
+
+
+KIA
+  
+
+
+
+Mercedes-Benz
+  
+
+
+
+MG
+  
+
+
+
+Mini
+  
+
+
+
+Nissan
+  
+
+
+
+Nio
+  
+
+
+
+Opel
+  
+
+
+
+Polestar
+  
+
+
+
+Renault
+  
+
+
+
+Skoda
+  
+
+
+
+Tesla
+  
+
+
+
+Toyota
+  
+
+
+
+Volvo
+  
+
+
+
+Volkswagen
+  
+
+
+
+Övrigt  
+
+
+Förklaring
+
+
+SIDA 2/2
+
+
+V2G - Förklaring
+
+
+V2G står för "Vehicle to Grid" och är en teknologi som gör det möjligt att skicka tillbaka energi till elnätet från batteriet i en elbil. Med V2G-tekniken kan bilens batteri genom smart multiriktad laddning nyttjas för att laddas och urladdas baserat på olika signaler, såsom elpris eller effekt- och energibehov i nätet. I de flesta fall kommer V2G möjliggöras genom en aggregator som kan sköta laddning, urladdning och betalning. Du som kund blir kompenserad för att göra din bil tillgänglig och för den el eller flexibla laddning som säljs, vilket också innebär att du förlorar en del av din flexibilitet och kontroll över bilens laddningsnivå.
+
+
+Aggregatorer i en V2G-lösning - Förklaring
+
+
+
+
+En aggregator kopplar samman flera energikällor, såsom batterierna i elbilar eller solpaneler, och skapar en större gemensam energiförsörjning. Detta gör det möjligt för privata ägare av sådana enheter att delta på marknaden för flexibilitet och stabilitet, vilket kräver större mängd energi/kraft än vad ett enskilt hushåll kan tillhandahålla.
+
+
+Observera att aggregatorer kan aggregera andra källor och inte bara elbilar, vilket kan vara viktigt att överväga om du har andra enheter som potentiellt kan aggregeras när du väljer en aggregator-tjänst.
+
+
+
+
+
+
+3. Skulle du vara intresserad av att använda V2G om du fick ersättning? *
+
+
+Markera endast en oval.
+
+
+  
+ Ja
+
+
+  
+ Nej
+
+
+  
+ Kanske
+
+
+
+
+
+
+
+
+
+
+	
+
+	4.
+	Skulle du vara intresserad av att använda V2G även om du inte fick någon
+	*
+	
+
+	ersättning?
+	
+
+	
+
+Markera endast en oval.
+
+
+  
+ Ja
+
+
+  
+ Nej
+
+
+  
+ Kanske
+
+
+
+
+5.        Vilka sätt skulle du föredra att få ersättning för den el/fexibilitet du säljer genom * V2G? (flera val möjliga)
+
+
+Markera alla som gäller.
+  
+
+
+
+Direkt utbetalning
+  
+
+
+
+Gratis eller billigare laddning
+  
+
+
+
+Lägre elkostnader för ditt hushåll
+  
+
+
+
+Batterigaranti och/eller rabatterade batteribyten
+  
+
+
+
+Förmåner som rabatter på bilartiklar (biltvättar, fordonsreparationer, etc.)
+  
+
+
+
+Andra förmåner, såsom rabatter på aktiviteter (biograf, nöjesparker, restauranger, etc.)
+  
+
+
+
+Någon typ av poäng i ett gamiferat system
+  
+
+
+
+Feedback om hur din miljöpåverkan minskat
+  
+
+
+
+Övrigt:
+  
+
+
+
+
+
+6. Hur viktiga är dessa faktorer för att du ska välja en aggregator? (1 låg - 5 hög) *
+
+
+Markera endast en oval per rad.
+  
+
+
+
+1        2        3        4        5        Vet ej
+
+
+Kontroll över
+
+
+laddningstillstånd
+  
+  
+  
+  
+  
+  
+
+
+
+och vilka timmar
+
+
+fordonet är aktivt
+
+
+* V2G
+  
+  
+  
+  
+  
+  
+  
+
+
+
+Kompensation
+  
+  
+  
+  
+  
+  
+  
+
+
+
+Enkel installation
+  
+
+
+
+Enkel
+  
+  
+  
+  
+  
+  
+
+
+
+användning
+  
+
+
+
+Kompatibilitet
+
+
+med dina andra
+  
+  
+  
+  
+  
+  
+
+
+
+flexibla resurser
+
+
+(hembatterier,
+
+
+solpaneler etc.)
+  
+
+
+
+Datasekretess
+  
+  
+  
+  
+  
+  
+
+
+
+och datasäkerhet
+  
+
+
+
+Rykte &
+  
+  
+  
+  
+  
+  
+
+
+
+recensioner
+  
+
+
+
+Vilken typ av
+
+
+nätstöd erbjuds
+  
+  
+  
+  
+  
+  
+
+
+
+(flexibilitet,
+
+
+balans och
+
+
+arbitrage)
+  
+
+
+
+Transparenta
+  
+  
+  
+  
+  
+  
+
+
+
+villkor
+  
+  
+  
+  
+  
+  
+  
+
+
+
+Miljöpåverkan
+  
+  
+  
+  
+  
+  
+  
+
+
+
+Bra kundsupport
+  
+
+
+
+
+
+
+
+
+
+7.        Vilken typ av aktör som erbjuder en aggregatortjänst skulle du helst ansluta dig * till?
+
+
+Markera endast en oval.
+
+
+  
+ Din biltillverkare (Volvo, Tesla, Polestar, etc.)
+
+
+  
+ Ditt elbolag (Göteborgs Energi Elhandel, Eon, Fortum etc.)
+
+
+  
+ Din bostadsrättsförening eller annan samfällighet
+
+
+  
+ Elnätsägare (Svenska Kraftnät, Vattenfall, Göteborgs Energi Nät AB etc.)
+
+
+  
+ Extern partner (Tibber, Tvinn etc.)
+
+
+  
+ Staten/kommun
+
+
+  
+ Jag bryr mig inte om detta
+
+
+  
+ Övrigt:
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________
+
+
+Appendix 3. Survey Results Question Six
+The following figures display the results from the sixth question in the survey as shown in appendix 2. Each aspect was rated on a scale of one to five or “dont know”.
+  
+
+Figure X1. Ratings of the first aspect.
+	  
+
+Figure X2. Ratings of second aspect.
+	  
+
+Figure X3. Ratings of third aspect.
+	  
+
+Figure X4. Ratings of fourth aspect.
+	  
+
+Figure X5. Ratings of fifth aspect.
+
+
+	  
+
+Figure X6. Ratings of sixth aspect.
+
+
+	  
+
+Figure X7. Ratings of seventh aspect.
+	  
+
+Figure X8. Ratings of eighth aspect.
+	  
+
+Figure X9. Ratings of ninth aspect.
+
+
+	  
+
+Figure X10. Ratings of tenth aspect.
+	  
+
+Figure X11. Ratings of eleventh aspect.
