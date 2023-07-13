@@ -47,7 +47,7 @@ class Game:
 
     """ Set the current wind speed, only used for testing """
     def setCurrentWind(self, wind):
-        if isinstance(wind,int):
+        if isinstance(wind,float):
             self.currentWind = wind
         else:
             raise Exception("invalif type for wind parameter: ", wind)
@@ -71,22 +71,26 @@ class Player:
         self.currentScore = 0
         self.xPos = xPos
 
-        self.angle = None
-        self.velocity = None
+        self.angle = 0
+        self.velocity = 0
     
     """ Create and return a projectile starting at the centre of this players cannon. Replaces any previous projectile for this player. """
     def fire(self, angle, velocity):
-        if not isinstance(angle, int) or not isinstance(velocity, int):
-            raise Exception("Invalid argument of angle or velocity: ", angle, velocity)
+        if not isinstance(angle, float) or not isinstance(velocity, float):
+            raise Exception("Invalid type of argument of angle or velocity: ", angle, velocity)
+        elif angle <= -90 or angle >= 90:
+            raise Exception("Angle out of range: ", angle)
+        elif velocity < 0:
+            raise Exception("Can't have negative velocity: ", velocity)
 
         self.velocity = velocity
         self.angle = angle
         if self.isReversed:
-            self.angle = 180-angle
+            newAngle = 180-angle
         else:
-            self.angle = angle
+            newAngle = angle
 
-        return Projectile(self.angle, self.velocity, self.game.getCurrentWind(), self.xPos, self.game.getCannonSize()/2, -110, 110)
+        return Projectile(newAngle, self.velocity, self.game.getCurrentWind(), self.xPos, self.game.getCannonSize()/2, -110, 110)
 
 
     """ Gives the x-distance from this players cannon to a projectile. If the cannon and the projectile touch (assuming the projectile is on the ground and factoring in both cannon and projectile size) this method should return 0"""
@@ -126,7 +130,7 @@ class Player:
 
     """ The angle and velocity of the last projectile this player fired, initially (45, 40) """
     def getAim(self):
-        return self.angle, self.velocity 
+        return self.angle, self.velocity
 
 
 
