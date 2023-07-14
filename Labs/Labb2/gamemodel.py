@@ -7,6 +7,7 @@ class Game:
     def __init__(self, cannonSize, ballSize):
         if not isinstance(cannonSize, int) or not isinstance(ballSize, int):
             raise Exception("Game constructor arguments invalid", cannonSize, ballSize)
+            #The excpetions could be swapped for print after development
 
         self.players = [Player(self, False, -90, "blue"), Player(self, True, 90, "red")]
         self.cannonSize = cannonSize
@@ -42,7 +43,9 @@ class Game:
     def nextPlayer(self):
         self.currentPlayerNum = 1-self.currentPlayerNum
         if self.currentPlayerNum not in (0,1):
-            raise Exception("Current player is: ", self.currentPlayerNum, ". Should be 0 or 1")
+            raise Exception("Current Player Number breaks invariant: ", self.currentPlayerNum, ". Should be 0 or 1")
+            #The excpetions could be swapped for print after development
+
         return abs(self.currentPlayerNum - 1)
 
     """ Set the current wind speed, only used for testing """
@@ -51,6 +54,7 @@ class Game:
             self.currentWind = wind
         else:
             raise Exception("invalif type for wind parameter: ", wind)
+            #The excpetions could be swapped for print after development
 
     def getCurrentWind(self):
         return self.currentWind
@@ -82,6 +86,7 @@ class Player:
             raise Exception("Angle out of range: ", angle)
         elif velocity < 0:
             raise Exception("Can't have negative velocity: ", velocity)
+            #The excpetions could be swapped for print after development
 
         self.velocity = velocity
         self.angle = angle
@@ -98,6 +103,7 @@ class Player:
         if not isinstance(proj, Projectile):
             exception = "invalid argument for projectileDistance method: "
             raise Exception(exception, proj, "excpected Projectile")
+            #The excpetions could be swapped for print after development
 
         projRadius = self.game.getBallSize()
         cannonSide = self.game.getCannonSize()

@@ -9,7 +9,7 @@ class GameGraphics:
         # open the window
         self.win = GraphWin("Cannon game" , 640, 480, autoflush=False)
         self.win.setCoords(-110, -10, 110, 155)
-        
+
         Line(Point(-110,0),Point(110,0)).draw(self.win)
         # draw the terrain
 
@@ -19,19 +19,19 @@ class GameGraphics:
 
     def drawCanon(self,playerNr):
         player = self.game.getPlayers()[playerNr]
-        
+
+        # draw the cannon
         cannon = Rectangle(Point(player.getX()-self.game.getCannonSize()/2, 0),Point(player.getX()+self.game.getCannonSize()/2,self.game.getCannonSize()/2))
         cannon.setFill(player.getColor())
         cannon.draw(self.win)
-        # draw the cannon
 
         return cannon
 
     def drawScore(self,playerNr):
+        # draw the score
         player = self.game.getPlayers()[playerNr]
         score = Text(Point(player.getX(), -3), "Score: " + str(player.getScore()))
         score.draw(self.win)
-        # draw the score
     
         return score
 
@@ -39,16 +39,16 @@ class GameGraphics:
         player = self.game.getCurrentPlayer()
         proj = player.fire(angle, vel)
 
-        circle_X = proj.getX()
-        circle_Y = proj.getY()
+        circleX = proj.getX()
+        circleY = proj.getY()
 
         player_num = self.game.getCurrentPlayerNumber()
         if self.draw_projs[player_num] is not None:
             self.draw_projs[player_num].undraw()
 
-        # draw the projectile (ball/circle)
+        # draw the projectile (ball/circle) and undraws the previous one
 
-        circle = Circle(Point(circle_X,circle_Y),self.game.getBallSize())
+        circle = Circle(Point(circleX,circleY),self.game.getBallSize())
         circle.setFill(self.game.getCurrentPlayer().getColor())
         circle.draw(self.win)
         self.draw_projs[player_num] = circle
@@ -57,10 +57,10 @@ class GameGraphics:
             proj.update(1/50)
 
             # move is a function in graphics. It moves an object dx units in x direction and dy units in y direction
-            circle.move(proj.getX() - circle_X, proj.getY() - circle_Y)
+            circle.move(proj.getX() - circleX, proj.getY() - circleY)
 
-            circle_X = proj.getX()
-            circle_Y = proj.getY()
+            circleX = proj.getX()
+            circleY = proj.getY()
 
             update(50)
 
@@ -71,6 +71,26 @@ class GameGraphics:
         self.draw_scores[playerNr].undraw()
         self.draw_scores[playerNr] = self.drawScore(playerNr)
         # update the score on the screen
+
+    def explode(self):
+
+        #sets parameters for the explosion
+        color = self.game.getCurrentPlayer().getColor()
+        cordX = self.game.getOtherPlayer().getX()
+        cannonSize = self.game.getCannonSize()
+        radius = self.game.getBallSize()
+
+        #draws the explosion from cannonSize to cannonSize*2
+        while radius <= 2 * cannonSize:
+            #draws the explosion, then pause, then undraws it
+            circle = Circle(Point(cordX,cannonSize/2),radius)
+            circle.setFill(color)
+            circle.draw(self.win)
+            update(15)
+            circle.undraw()
+            radius += 1
+
+
 
     def play(self):
         while True:
@@ -93,6 +113,7 @@ class GameGraphics:
             distance = other.projectileDistance(proj)
 
             if distance == 0.0:
+                self.explode()
                 player.increaseScore()
                 self.updateScore(self.game.getCurrentPlayerNumber())
                 self.game.newRound()
