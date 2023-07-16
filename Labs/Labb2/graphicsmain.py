@@ -86,9 +86,9 @@ class GameGraphics:
             circle = Circle(Point(cordX,cannonSize/2),radius)
             circle.setFill(color)
             circle.draw(self.win)
-            update(15)
+            update(35)
             circle.undraw()
-            radius += 1
+            radius += 1/2
 
 
 
