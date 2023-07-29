@@ -66,3 +66,57 @@ Jobbskatteavdrag:
     multiplicerad med kommunal+landstingsskattesatsen,
     med avdrag för 3 % av de arbetsinkomster som överstiger 710 850 kr
 """
+
+kommunalskattesatsen_gbg = 21.12/100
+landstingsskattesatsen_vgr = 11.48/100
+statlig_skattesatsen = 20/100
+brytpunkten_statlig_skatt = 613900
+grundavdraget = 22208
+
+def kommunalskatt(brutto):
+    skatt = (brutto - grundavdraget) * kommunalskattesatsen_gbg
+    print("din kommunaalskatt är: ", skatt)
+    return skatt
+
+def landstingsskatt(brutto):
+    return (brutto - grundavdraget) * landstingsskattesatsen_vgr
+
+def statlig_skatt(brutto):
+    if brutto > brytpunkten_statlig_skatt:
+        return (brytpunkten_statlig_skatt - grundavdraget) * statlig_skattesatsen
+    else:
+        return 0
+
+def public_service_avgift(brutto):
+    if brutto * 0.01 > 1300:
+        return 1300
+    else:
+        return brutto * 0.01
+
+def begravningsavgift(brutto):
+    return brutto * 0.00258
+
+def jobbskatteavdrag(brutto):
+    if brutto < 47775:
+        return (brutto - grundavdraget) * (kommunalskattesatsen_gbg + landstingsskattesatsen_vgr)
+    elif brutto < 170100:
+        return (47775 - 0.3874 * (brutto - 47775) - grundavdraget) * (kommunalskattesatsen_gbg + landstingsskattesatsen_vgr)
+    elif brutto < 424200:
+        return (95130 - 0.128 * (brutto - 170100) - grundavdraget) * (kommunalskattesatsen_gbg + landstingsskattesatsen_vgr)
+    elif brutto < 710850:
+        return (127680 - grundavdraget) * (kommunalskattesatsen_gbg + landstingsskattesatsen_vgr)
+    else:
+        return (127680 - grundavdraget - 0.03 * (brutto - 710850)) * (kommunalskattesatsen_gbg + landstingsskattesatsen_vgr)
+
+def skatt():
+  print("Ange din bruttolön: ")
+  brutto = int(input())
+  brutto -= kommunalskatt(brutto)
+  brutto -= landstingsskatt(brutto)
+  brutto -= statlig_skatt(brutto)
+  brutto -= public_service_avgift(brutto)
+  brutto -= begravningsavgift(brutto)
+  brutto += jobbskatteavdrag(brutto)
+  print("Din nettolön är: ", brutto)
+
+skatt()
